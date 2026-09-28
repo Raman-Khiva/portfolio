@@ -194,5 +194,5 @@ Distributed under the MIT License. See [`LICENSE`](./LICENSE) for more informati
 ---
 
 <div align="center">
-Designed & Built by <b>[YOUR NAME]</b> • Crafted with Next.js & Tailwind CSS
+Designed & Built by <b>Raman Singh</b> • Crafted with Next.js & Tailwind CSS
 </div>

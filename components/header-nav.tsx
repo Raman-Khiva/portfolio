@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState, useEffect } from "react"
-import { Code2, Sparkles, Menu, X, ArrowUpRight } from "lucide-react"
+import { Code2, Sparkles, Menu, X, ArrowUpRight, Mail } from "lucide-react"
 
 interface HeaderNavProps {
   onPlanProjectClick?: () => void
@@ -64,13 +64,13 @@ export function HeaderNav({ onPlanProjectClick }: HeaderNavProps) {
 
           {/* CTA & Mobile Toggle */}
           <div className="flex items-center gap-3">
-            <button
-              onClick={onPlanProjectClick}
-              className="px-4 py-2 rounded-xl bg-[#1c1c24] hover:bg-[#252532] border border-[#2a2a38] hover:border-zinc-500 text-xs md:text-sm font-medium text-white flex items-center gap-2 transition active:scale-95 shadow-md"
+            <a
+              href="#contact"
+              className="px-4 py-2 rounded-xl bg-white hover:bg-zinc-200 text-xs md:text-sm font-semibold text-black flex items-center gap-2 transition active:scale-95 shadow-md"
             >
-              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-              <span>Plan Project</span>
-            </button>
+              <Mail className="w-3.5 h-3.5 text-black" />
+              <span>Contact Now</span>
+            </a>
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

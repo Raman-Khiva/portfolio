@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState } from "react"
+import Image from "next/image"
 import {
   Briefcase,
   Layers,
@@ -228,16 +229,21 @@ export function HeroSection({ onSelectPrompt }: HeroSectionProps) {
         
         {/* Developer Profile Badge */}
         <div className="relative group cursor-pointer" onClick={() => onSelectPrompt(PRESET_PLANS["oasian"])}>
-          <div className="w-20 h-20 rounded-2xl bg-[#121215] border border-[#222228] p-1 shadow-2xl shadow-black badge-glow transition-all duration-300 group-hover:border-amber-400 group-hover:scale-105 overflow-hidden flex items-center justify-center">
-            <div className="w-full h-full rounded-xl bg-gradient-to-br from-amber-500/20 via-zinc-900 to-black flex items-center justify-center border border-amber-500/30">
-              <span className="text-2xl font-black text-amber-400 tracking-tighter">RS</span>
-            </div>
+          <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-44 md:h-44 rounded-full bg-[#121215] border-2 border-[#262632] p-1.5 shadow-2xl shadow-black badge-glow transition-all duration-300 group-hover:border-amber-400 group-hover:scale-105 overflow-hidden">
+            <Image
+              src="/portfolio-pic.png"
+              alt="Ramandeep Singh (Raman Singh) Profile Picture"
+              width={200}
+              height={200}
+              priority
+              className="w-full h-full object-cover rounded-full"
+            />
           </div>
           {/* Status Dot */}
-          <div className="absolute -bottom-1 -right-1 flex items-center justify-center">
-            <span className="relative flex h-4 w-4">
+          <div className="absolute bottom-1 right-1 flex items-center justify-center">
+            <span className="relative flex h-5 w-5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-4 w-4 bg-emerald-500 border-2 border-[#08080a]"></span>
+              <span className="relative inline-flex rounded-full h-5 w-5 bg-emerald-500 border-2 border-[#08080a]"></span>
             </span>
           </div>
         </div>
@@ -307,6 +313,45 @@ export function HeroSection({ onSelectPrompt }: HeroSectionProps) {
             <Mail className="w-4 h-4 text-zinc-400 group-hover:text-emerald-400 transition" />
             <span>Contact</span>
           </a>
+        </div>
+
+        {/* Developer Stats Banner */}
+        <div className="w-full max-w-3xl bg-[#121215] border border-[#222228] rounded-2xl py-4 px-6 shadow-xl grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-[#222228] mt-2">
+          {/* Stat 1 */}
+          <div className="flex flex-col items-center justify-center py-2 md:py-0 px-2 text-center">
+            <div className="flex items-center gap-1.5 text-zinc-400 text-xs font-medium mb-1">
+              <Briefcase className="w-3.5 h-3.5 text-amber-400" />
+            </div>
+            <div className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">2+ Years</div>
+            <div className="text-[11px] text-zinc-400 font-normal">Building Software</div>
+          </div>
+
+          {/* Stat 2 */}
+          <div className="flex flex-col items-center justify-center py-2 md:py-0 px-2 text-center">
+            <div className="flex items-center gap-1.5 text-zinc-400 text-xs font-medium mb-1">
+              <Layers className="w-3.5 h-3.5 text-cyan-400" />
+            </div>
+            <div className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">6+ Projects</div>
+            <div className="text-[11px] text-zinc-400 font-normal">Built & Shipped</div>
+          </div>
+
+          {/* Stat 3 */}
+          <div className="flex flex-col items-center justify-center py-2 md:py-0 px-2 text-center">
+            <div className="flex items-center gap-1.5 text-zinc-400 text-xs font-medium mb-1">
+              <Trophy className="w-3.5 h-3.5 text-amber-400" />
+            </div>
+            <div className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">1000+</div>
+            <div className="text-[11px] text-zinc-400 font-normal">LeetCode Solved</div>
+          </div>
+
+          {/* Stat 4 */}
+          <div className="flex flex-col items-center justify-center py-2 md:py-0 px-2 text-center">
+            <div className="flex items-center gap-1.5 text-zinc-400 text-xs font-medium mb-1">
+              <Zap className="w-3.5 h-3.5 text-purple-400" />
+            </div>
+            <div className="text-xl sm:text-2xl font-extrabold text-amber-400 tracking-tight">1912</div>
+            <div className="text-[11px] text-zinc-400 font-normal">LeetCode CP Max Rating</div>
+          </div>
         </div>
 
         {/* 4 Tech & Capability Cards Grid */}
@@ -437,45 +482,6 @@ export function HeroSection({ onSelectPrompt }: HeroSectionProps) {
           </div>
         </div>
 
-        {/* Developer Stats Banner */}
-        <div className="w-full max-w-3xl bg-[#121215] border border-[#222228] rounded-2xl py-4 px-6 shadow-xl grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-[#222228] mt-2">
-          {/* Stat 1 */}
-          <div className="flex flex-col items-center justify-center py-2 md:py-0 px-2 text-center">
-            <div className="flex items-center gap-1.5 text-zinc-400 text-xs font-medium mb-1">
-              <Briefcase className="w-3.5 h-3.5 text-amber-400" />
-            </div>
-            <div className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">2+ Years</div>
-            <div className="text-[11px] text-zinc-400 font-normal">Building Software</div>
-          </div>
-
-          {/* Stat 2 */}
-          <div className="flex flex-col items-center justify-center py-2 md:py-0 px-2 text-center">
-            <div className="flex items-center gap-1.5 text-zinc-400 text-xs font-medium mb-1">
-              <Layers className="w-3.5 h-3.5 text-cyan-400" />
-            </div>
-            <div className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">6+ Projects</div>
-            <div className="text-[11px] text-zinc-400 font-normal">Built & Shipped</div>
-          </div>
-
-          {/* Stat 3 */}
-          <div className="flex flex-col items-center justify-center py-2 md:py-0 px-2 text-center">
-            <div className="flex items-center gap-1.5 text-zinc-400 text-xs font-medium mb-1">
-              <Trophy className="w-3.5 h-3.5 text-amber-400" />
-            </div>
-            <div className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">1000+</div>
-            <div className="text-[11px] text-zinc-400 font-normal">LeetCode Solved</div>
-          </div>
-
-          {/* Stat 4 */}
-          <div className="flex flex-col items-center justify-center py-2 md:py-0 px-2 text-center">
-            <div className="flex items-center gap-1.5 text-zinc-400 text-xs font-medium mb-1">
-              <Zap className="w-3.5 h-3.5 text-purple-400" />
-            </div>
-            <div className="text-xl sm:text-2xl font-extrabold text-amber-400 tracking-tight">1912</div>
-            <div className="text-[11px] text-zinc-400 font-normal">LeetCode CP Max Rating</div>
-          </div>
-        </div>
-
         {/* Interactive Custom Architecture Prompt Input */}
         <form onSubmit={handleCustomSubmit} className="w-full max-w-xl mt-4">
           <div className="relative flex items-center">
@@ -493,7 +499,7 @@ export function HeroSection({ onSelectPrompt }: HeroSectionProps) {
               type="submit"
               className="absolute right-2 px-3 py-1.5 rounded-xl bg-white hover:bg-zinc-200 text-black font-medium text-xs flex items-center gap-1 transition shadow"
             >
-              Plan System <Sparkles className="w-3 h-3" />
+              Contact Now <Sparkles className="w-3 h-3" />
             </button>
           </div>
         </form>

@@ -53,17 +53,12 @@ export function ProjectPlanModal({
   onBookConsultation,
 }: ProjectPlanModalProps) {
   const [activeTab, setActiveTab] = useState<"overview" | "architecture" | "roadmap">("overview")
-  const [inquirySent, setInquirySent] = useState(false)
 
   if (!isOpen || !planData) return null
 
-  const handleRequestBuild = () => {
-    setInquirySent(true)
-    setTimeout(() => {
-      onBookConsultation(`Requesting build for: ${planData.title}`)
-      setInquirySent(false)
-      onClose()
-    }, 1200)
+  const handleDiscussProject = () => {
+    onBookConsultation(`Inquiry regarding built project: ${planData.title}`)
+    onClose()
   }
 
   return (
@@ -77,12 +72,14 @@ export function ProjectPlanModal({
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="text-xs px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 font-mono">
+                <span className="text-xs px-2.5 py-0.5 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-400 font-mono">
                   {planData.category}
                 </span>
-                <span className="text-xs text-zinc-400 font-mono">Est: {planData.timeline}</span>
+                <span className="text-xs text-emerald-400 font-mono flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" /> Production Live
+                </span>
               </div>
-              <h2 className="text-lg font-bold text-white tracking-tight">{planData.title}</h2>
+              <h2 className="text-lg font-bold text-white tracking-tight mt-0.5">{planData.title}</h2>
             </div>
           </div>
           <button
@@ -104,7 +101,7 @@ export function ProjectPlanModal({
                 : "border-transparent text-zinc-400 hover:text-zinc-200"
             }`}
           >
-            System Overview
+            Project Case Study
           </button>
           <button
             onClick={() => setActiveTab("architecture")}
@@ -114,7 +111,7 @@ export function ProjectPlanModal({
                 : "border-transparent text-zinc-400 hover:text-zinc-200"
             }`}
           >
-            Tech Architecture
+            Technical Architecture
           </button>
           <button
             onClick={() => setActiveTab("roadmap")}
@@ -124,27 +121,27 @@ export function ProjectPlanModal({
                 : "border-transparent text-zinc-400 hover:text-zinc-200"
             }`}
           >
-            Phase Breakdown
+            Development Highlights
           </button>
         </div>
 
         {/* Content Body */}
         <div className="p-6 space-y-6">
-          {/* Prompt Box display */}
+          {/* System Purpose & Scope */}
           <div className="p-4 rounded-xl bg-[#141419] border border-[#22222d] flex items-start gap-3">
             <Terminal className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
             <div className="space-y-1">
-              <div className="text-xs font-mono text-zinc-500 uppercase tracking-wider">Requested Prompt</div>
+              <div className="text-xs font-mono text-zinc-500 uppercase tracking-wider">System Objective & Scope</div>
               <p className="text-sm font-mono text-zinc-300">&quot;{planData.prompt}&quot;</p>
             </div>
           </div>
 
           {activeTab === "overview" && (
             <div className="space-y-6">
-              {/* Recommended Stack */}
+              {/* Stack Used */}
               <div>
                 <h3 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3">
-                  Recommended Tech Stack
+                  Technologies & Frameworks
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {planData.stack.map((tech, idx) => (
@@ -152,21 +149,21 @@ export function ProjectPlanModal({
                       key={idx}
                       className="px-3 py-1.5 rounded-lg bg-[#1a1a22] border border-[#2a2a38] text-sm text-zinc-200 font-medium flex items-center gap-1.5"
                     >
-                      <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                      <span className="w-2 h-2 rounded-full bg-amber-400" />
                       {tech}
                     </span>
                   ))}
                 </div>
               </div>
 
-              {/* Target Performance SLA */}
+              {/* Performance & Reliability Benchmarks */}
               <div className="grid grid-cols-3 gap-4">
                 <div className="p-4 rounded-xl bg-[#141419] border border-[#22222c] text-center">
-                  <div className="text-xs text-zinc-500 font-mono">Target Latency</div>
+                  <div className="text-xs text-zinc-500 font-mono">Response Speed</div>
                   <div className="text-xl font-bold text-white mt-1">{planData.stats.latency}</div>
                 </div>
                 <div className="p-4 rounded-xl bg-[#141419] border border-[#22222c] text-center">
-                  <div className="text-xs text-zinc-500 font-mono">Target Uptime</div>
+                  <div className="text-xs text-zinc-500 font-mono">System Availability</div>
                   <div className="text-xl font-bold text-white mt-1">{planData.stats.uptime}</div>
                 </div>
                 <div className="p-4 rounded-xl bg-[#141419] border border-[#22222c] text-center">
@@ -175,10 +172,10 @@ export function ProjectPlanModal({
                 </div>
               </div>
 
-              {/* High Level Key Features */}
+              {/* Key Features Built */}
               <div>
                 <h3 className="text-sm font-semibold text-zinc-400 uppercase tracking-wider mb-3">
-                  Key Deliverables
+                  Engineering Deliverables & Capabilities
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <div className="p-3.5 rounded-xl bg-[#15151b] border border-[#22222c] flex items-center gap-3">
@@ -206,28 +203,28 @@ export function ProjectPlanModal({
             <div className="space-y-4">
               <div className="p-4 rounded-xl bg-[#141419] border border-[#22222d] space-y-2">
                 <div className="flex items-center gap-2 text-amber-400 text-sm font-semibold">
-                  <Layers className="w-4 h-4" /> Frontend & User Interface
+                  <Layers className="w-4 h-4" /> Frontend & User Interface Architecture
                 </div>
                 <p className="text-sm text-zinc-300 font-mono leading-relaxed">{planData.architecture.frontend}</p>
               </div>
 
               <div className="p-4 rounded-xl bg-[#141419] border border-[#22222d] space-y-2">
                 <div className="flex items-center gap-2 text-cyan-400 text-sm font-semibold">
-                  <Cpu className="w-4 h-4" /> Backend & API Gateway
+                  <Cpu className="w-4 h-4" /> Backend API & Service Layer
                 </div>
                 <p className="text-sm text-zinc-300 font-mono leading-relaxed">{planData.architecture.backend}</p>
               </div>
 
               <div className="p-4 rounded-xl bg-[#141419] border border-[#22222d] space-y-2">
                 <div className="flex items-center gap-2 text-emerald-400 text-sm font-semibold">
-                  <Zap className="w-4 h-4" /> Database & Storage
+                  <Zap className="w-4 h-4" /> Database Schema & Caching Engine
                 </div>
                 <p className="text-sm text-zinc-300 font-mono leading-relaxed">{planData.architecture.database}</p>
               </div>
 
               <div className="p-4 rounded-xl bg-[#141419] border border-[#22222d] space-y-2">
                 <div className="flex items-center gap-2 text-purple-400 text-sm font-semibold">
-                  <GitBranch className="w-4 h-4" /> Cloud & Deployment Infrastructure
+                  <GitBranch className="w-4 h-4" /> Cloud Deployment & DevOps Infrastructure
                 </div>
                 <p className="text-sm text-zinc-300 font-mono leading-relaxed">{planData.architecture.cloud}</p>
               </div>
@@ -261,9 +258,9 @@ export function ProjectPlanModal({
 
         {/* Footer Actions */}
         <div className="sticky bottom-0 z-10 flex items-center justify-between px-6 py-4 bg-[#101014]/95 backdrop-blur-md border-t border-[#22222a]">
-          <div className="text-xs text-zinc-400 flex items-center gap-1.5">
-            <Calendar className="w-4 h-4 text-amber-400" />
-            Ready for instant execution
+          <div className="text-xs text-zinc-400 flex items-center gap-1.5 font-mono">
+            <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+            Built & Deployed by Raman Singh
           </div>
           <div className="flex items-center gap-3">
             <button
@@ -273,19 +270,10 @@ export function ProjectPlanModal({
               Close
             </button>
             <button
-              onClick={handleRequestBuild}
-              disabled={inquirySent}
-              className="px-5 py-2.5 rounded-xl bg-white hover:bg-zinc-200 text-black font-semibold text-sm flex items-center gap-2 transition shadow-lg shadow-white/10 active:scale-95 disabled:opacity-50"
+              onClick={handleDiscussProject}
+              className="px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-black font-semibold text-sm flex items-center gap-2 transition shadow-lg shadow-amber-400/10 active:scale-95"
             >
-              {inquirySent ? (
-                <>
-                  <Sparkles className="w-4 h-4 animate-spin text-black" /> Initializing...
-                </>
-              ) : (
-                <>
-                  Request This Build <ArrowRight className="w-4 h-4" />
-                </>
-              )}
+              Discuss This Architecture <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </div>

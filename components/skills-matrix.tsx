@@ -7,7 +7,7 @@ interface SkillCategory {
   title: string
   icon: React.ElementType
   color: string
-  skills: { name: string; level: string; description: string }[]
+  skills: { name: string; description: string }[]
 }
 
 const SKILLS_DATA: SkillCategory[] = [
@@ -16,10 +16,10 @@ const SKILLS_DATA: SkillCategory[] = [
     icon: Code2,
     color: "text-amber-400",
     skills: [
-      { name: "Responsive Design & Modern UI", level: "Expert", description: "Pixel-perfect responsive layouts, dark glassmorphic themes, mobile optimization & micro-animations" },
-      { name: "Fully Functional Web Apps", level: "Expert", description: "End-to-end MERN/PERN platforms, Next.js 16 App Router, dynamic routing & client-side state handling" },
-      { name: "State Management (Redux / RTK)", level: "Expert", description: "Centralized store architecture, Redux Toolkit slices, RTK Query automated caching & optimistic updates" },
-      { name: "SEO & Web Performance SLA", level: "Expert", description: "Technical SEO meta strategy, SSR/SSG rendering, OpenGraph tags, Lighthouse 95+ audit & sub-second LCP" },
+      { name: "Responsive Design & Modern UI", description: "Pixel-perfect responsive layouts, dark glassmorphic themes, mobile optimization & micro-animations" },
+      { name: "Fully Functional Web Apps", description: "End-to-end MERN/PERN platforms, Next.js 16 App Router, dynamic routing & client-side state handling" },
+      { name: "State Management (Redux / RTK)", description: "Centralized store architecture, Redux Toolkit slices, RTK Query automated caching & optimistic updates" },
+      { name: "SEO & Web Performance SLA", description: "Technical SEO meta strategy, SSR/SSG rendering, OpenGraph tags, Lighthouse 95+ audit & sub-second LCP" },
     ],
   },
   {
@@ -27,10 +27,10 @@ const SKILLS_DATA: SkillCategory[] = [
     icon: Server,
     color: "text-cyan-400",
     skills: [
-      { name: "Authentication & Authorization", level: "Expert", description: "JWT session management, OAuth 2.0 logins, Role-Based Access Control (RBAC), bcrypt & secure HTTP cookies" },
-      { name: "RESTful APIs & Microservices", level: "Expert", description: "High-throughput Express/Node.js architecture, custom middleware pipelines & OpenAPI specs" },
-      { name: "Database Indexing & Query Tuning", level: "Expert", description: "PostgreSQL B-Tree indexing, schema ERDs, Prisma ORM relation mapping, query optimization & pooling" },
-      { name: "Caching, Rate Limiting & Security", level: "Expert", description: "Redis sliding-window rate limiters, session caching, DDoS mitigation, CORS & headers security" },
+      { name: "Authentication & Authorization", description: "JWT session management, OAuth 2.0 logins, Role-Based Access Control (RBAC), bcrypt & secure HTTP cookies" },
+      { name: "RESTful APIs & Microservices", description: "High-throughput Express/Node.js architecture, custom middleware pipelines & OpenAPI specs" },
+      { name: "Database Indexing & Query Tuning", description: "PostgreSQL B-Tree indexing, schema ERDs, Prisma ORM relation mapping, query optimization & pooling" },
+      { name: "Caching, Rate Limiting & Security", description: "Redis sliding-window rate limiters, session caching, DDoS mitigation, CORS & headers security" },
     ],
   },
   {
@@ -38,10 +38,10 @@ const SKILLS_DATA: SkillCategory[] = [
     icon: Trophy,
     color: "text-amber-400",
     skills: [
-      { name: "Object-Oriented Programming (OOPs)", level: "Expert", description: "SOLID design principles, inheritance, polymorphism, encapsulation, abstraction & design patterns" },
-      { name: "Data Structures & Algorithms", level: "Expert", description: "Advanced Graph algorithms, Dynamic Programming, Trees, Heap management & time/space optimization" },
-      { name: "Competitive Problem Solving", level: "Competitive", description: "1912 Peak CP contest rating on LeetCode (Raman_Khiva) with top-rank timed problem solving" },
-      { name: "C++ Memory & System Performance", level: "Expert", description: "Modern C++ (C++17/20), Standard Template Library (STL), memory management pointers & sub-40ms execution" },
+      { name: "Object-Oriented Programming (OOPs)", description: "SOLID design principles, inheritance, polymorphism, encapsulation, abstraction & design patterns" },
+      { name: "Data Structures & Algorithms", description: "Advanced Graph algorithms, Dynamic Programming, Trees, Heap management & time/space optimization" },
+      { name: "Competitive Problem Solving", description: "1912 Peak CP contest rating on LeetCode (Raman_Khiva) with top-rank timed problem solving" },
+      { name: "C++ Memory & System Performance", description: "Modern C++ (C++17/20), Standard Template Library (STL), memory management pointers & sub-40ms execution" },
     ],
   },
   {
@@ -49,10 +49,10 @@ const SKILLS_DATA: SkillCategory[] = [
     icon: Cpu,
     color: "text-emerald-400",
     skills: [
-      { name: "Linux System Expert & Remote Admin", level: "Expert", description: "Power user in Ubuntu/Debian Linux, SSH remote machine administration, systemd processes, Bash scripting & firewall rules" },
-      { name: "AI ML RAG & Vector Indexing", level: "Advanced", description: "Retrieval-Augmented Generation, vector similarity search, document chunking & LLM context injection" },
-      { name: "Python & FastAPI Microservices", level: "Expert", description: "Async Python pipelines, Pydantic validation, streaming token endpoints & background task queues" },
-      { name: "Cloud Infrastructure & Containerization", level: "Advanced", description: "AWS EC2/ECS remote hosting, Docker builds, Nginx reverse proxy & SSL domain configs" },
+      { name: "Linux System & Remote Machine Admin", description: "Power user in Ubuntu/Debian Linux, SSH remote machine administration, systemd processes, Bash scripting & firewall rules" },
+      { name: "AI ML RAG & Vector Indexing", description: "Retrieval-Augmented Generation, vector similarity search, document chunking & LLM context injection" },
+      { name: "Python & FastAPI Microservices", description: "Async Python pipelines, Pydantic validation, streaming token endpoints & background task queues" },
+      { name: "Cloud Infrastructure & Containerization", description: "AWS EC2/ECS remote hosting, Docker builds, Nginx reverse proxy & SSL domain configs" },
     ],
   },
 ]
@@ -93,18 +93,13 @@ export function SkillsMatrix() {
                 {cat.skills.map((skill, sIdx) => (
                   <div
                     key={sIdx}
-                    className="p-3 rounded-xl bg-[#16161b] border border-[#22222d] flex items-start justify-between gap-3"
+                    className="p-3 rounded-xl bg-[#16161b] border border-[#22222d] flex items-start gap-3"
                   >
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                     <div>
-                      <div className="flex items-center gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                        <span className="text-xs sm:text-sm font-semibold text-white">{skill.name}</span>
-                      </div>
-                      <p className="text-[11px] text-zinc-400 font-mono mt-0.5 pl-6">{skill.description}</p>
+                      <span className="text-xs sm:text-sm font-semibold text-white">{skill.name}</span>
+                      <p className="text-[11px] text-zinc-400 font-mono mt-0.5">{skill.description}</p>
                     </div>
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1f1f28] border border-[#2e2e3a] text-zinc-300 shrink-0">
-                      {skill.level}
-                    </span>
                   </div>
                 ))}
               </div>

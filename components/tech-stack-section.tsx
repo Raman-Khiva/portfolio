@@ -100,8 +100,8 @@ const TECH_CATEGORIES: TechCategory[] = [
     color: "text-purple-400",
     badgeColor: "border-purple-500/20 hover:border-purple-400/50",
     tools: [
-      { name: "Linux System Expert", icon: Terminal, iconColor: "text-amber-400", tag: "Expert" },
-      { name: "Remote Machine Admin (SSH)", icon: Server, iconColor: "text-cyan-400", tag: "Remote Dev" },
+      { name: "Linux Systems & Administration", icon: Terminal, iconColor: "text-amber-400" },
+      { name: "Remote Machine Admin (SSH)", icon: Server, iconColor: "text-cyan-400" },
       { name: "Headless Server & Systemd", icon: Terminal, iconColor: "text-emerald-400" },
       { name: "Docker & Compose", icon: DockerIcon, iconColor: "text-cyan-400" },
       { name: "AWS (EC2, ECS, S3)", icon: Cloud, iconColor: "text-amber-500" },
@@ -122,7 +122,7 @@ const TECH_CATEGORIES: TechCategory[] = [
       { name: "TypeScript", icon: TypeScriptIcon, iconColor: "text-blue-400" },
       { name: "JavaScript", icon: Code2, iconColor: "text-yellow-400" },
       { name: "SQL", icon: Database, iconColor: "text-indigo-400" },
-      { name: "LeetCode CP", icon: LeetCodeIcon, iconColor: "text-amber-400", tag: "1912 Rating" },
+      { name: "LeetCode CP", icon: LeetCodeIcon, iconColor: "text-amber-400" },
       { name: "Object-Oriented Design (OOPs)", icon: Terminal, iconColor: "text-purple-400" },
     ],
   },
@@ -188,11 +188,6 @@ export function TechStackSection() {
                       <span className="text-xs font-medium text-zinc-200 group-hover:text-white">
                         {tool.name}
                       </span>
-                      {tool.tag && (
-                        <span className="text-[9px] font-mono px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 font-bold ml-1">
-                          {tool.tag}
-                        </span>
-                      )}
                     </div>
                   )
                 })}

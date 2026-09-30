@@ -6,6 +6,7 @@ import { HeroSection, PRESET_PLANS } from "@/components/hero-section"
 import { ProjectPlanModal, ProjectPlanData } from "@/components/project-plan-modal"
 import { ProjectsSection } from "@/components/projects-section"
 import { SkillsMatrix } from "@/components/skills-matrix"
+import { TechStackSection } from "@/components/tech-stack-section"
 import { ExperienceTimeline } from "@/components/experience-timeline"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
@@ -48,8 +49,11 @@ export default function Page() {
         {/* Featured Projects Showcase */}
         <ProjectsSection onInspectPlan={handleOpenPlan} />
 
-        {/* Skills & Capability Matrix */}
+        {/* Role Competencies & Capabilities */}
         <SkillsMatrix />
+
+        {/* Dedicated Tech & Tools Inventory */}
+        <TechStackSection />
 
         {/* Experience & Career Milestones */}
         <ExperienceTimeline />

@@ -12,47 +12,47 @@ interface SkillCategory {
 
 const SKILLS_DATA: SkillCategory[] = [
   {
-    title: "Full-Stack & Web Engineering",
+    title: "Full-Stack & Frontend Development",
     icon: Code2,
     color: "text-amber-400",
     skills: [
-      { name: "MERN Stack & Next.js 16", level: "Expert", description: "MongoDB, Express, React, Node.js, Next.js App Router" },
-      { name: "JavaScript & TypeScript", level: "Expert", description: "ES6+, Async programming, Strict typing & Interfaces" },
-      { name: "Redux & Redux Toolkit (RTK)", level: "Expert", description: "Centralized state management, RTK Query, Slices" },
-      { name: "Tailwind CSS & Modern UI", level: "Expert", description: "Custom design systems, pitch-dark themes, micro-animations" },
+      { name: "Responsive Design & Modern UI", level: "Expert", description: "Pixel-perfect responsive layouts, dark glassmorphic themes, mobile optimization & micro-animations" },
+      { name: "Fully Functional Web Apps", level: "Expert", description: "End-to-end MERN/PERN platforms, Next.js 16 App Router, dynamic routing & client-side state handling" },
+      { name: "State Management (Redux / RTK)", level: "Expert", description: "Centralized store architecture, Redux Toolkit slices, RTK Query automated caching & optimistic updates" },
+      { name: "SEO & Web Performance SLA", level: "Expert", description: "Technical SEO meta strategy, SSR/SSG rendering, OpenGraph tags, Lighthouse 95+ audit & sub-second LCP" },
     ],
   },
   {
-    title: "Backend, Databases & Cloud",
+    title: "Backend, Security & Database Engineering",
     icon: Server,
     color: "text-cyan-400",
     skills: [
-      { name: "Node.js & Express APIs", level: "Expert", description: "RESTful architecture, Middleware, JWT Auth" },
-      { name: "PostgreSQL & Prisma ORM", level: "Expert", description: "Database ERD, Connection pooling, Query optimization" },
-      { name: "Redis Caching & Pub/Sub", level: "Expert", description: "Sliding window rate limiters, Session caching, Message queues" },
-      { name: "AWS & Docker Deployment", level: "Advanced", description: "Containerized builds, ECS cloud services, Automated CI/CD" },
+      { name: "Authentication & Authorization", level: "Expert", description: "JWT session management, OAuth 2.0 logins, Role-Based Access Control (RBAC), bcrypt & secure HTTP cookies" },
+      { name: "RESTful APIs & Microservices", level: "Expert", description: "High-throughput Express/Node.js architecture, custom middleware pipelines & OpenAPI specs" },
+      { name: "Database Indexing & Query Tuning", level: "Expert", description: "PostgreSQL B-Tree indexing, schema ERDs, Prisma ORM relation mapping, query optimization & pooling" },
+      { name: "Caching, Rate Limiting & Security", level: "Expert", description: "Redis sliding-window rate limiters, session caching, DDoS mitigation, CORS & headers security" },
     ],
   },
   {
-    title: "C++, OOPs & Competitive Programming",
+    title: "System Architecture & Algorithmic Rigor",
     icon: Trophy,
     color: "text-amber-400",
     skills: [
-      { name: "C++ Programming & STL", level: "Expert", description: "Standard Template Library, Pointers, Memory management" },
-      { name: "Object-Oriented Programming (OOPs)", level: "Expert", description: "Inheritance, Polymorphism, Encapsulation, Abstraction" },
-      { name: "1000+ Solved LeetCode Problems", level: "Expert", description: "Data Structures, Algorithms, Graph & DP techniques" },
-      { name: "1912 Max CP Rating (LeetCode)", level: "Competitive", description: "High-rank contest performance & algorithmic optimization" },
+      { name: "Object-Oriented Programming (OOPs)", level: "Expert", description: "SOLID design principles, inheritance, polymorphism, encapsulation, abstraction & design patterns" },
+      { name: "Data Structures & Algorithms", level: "Expert", description: "Advanced Graph algorithms, Dynamic Programming, Trees, Heap management & time/space optimization" },
+      { name: "Competitive Problem Solving", level: "Competitive", description: "1912 Peak CP contest rating on LeetCode (Raman_Khiva) with top-rank timed problem solving" },
+      { name: "C++ Memory & System Performance", level: "Expert", description: "Modern C++ (C++17/20), Standard Template Library (STL), memory management pointers & sub-40ms execution" },
     ],
   },
   {
-    title: "AI / ML & Python Development",
+    title: "AI / ML, Linux & Infrastructure",
     icon: Cpu,
     color: "text-emerald-400",
     skills: [
-      { name: "Python Engineering", level: "Expert", description: "Clean Python code, Data processing, Async IO scripts" },
-      { name: "FastAPI Backend Framework", level: "Expert", description: "Pydantic validation, Async endpoints, OpenAPI specs" },
-      { name: "ML & RAG Building", level: "Advanced", description: "Retrieval-Augmented Generation, Vector embeddings, LLM context" },
-      { name: "Production System Deployment", level: "Expert", description: "6+ Shipped production applications over 2+ years" },
+      { name: "Linux System Expert & Remote Admin", level: "Expert", description: "Power user in Ubuntu/Debian Linux, SSH remote machine administration, systemd processes, Bash scripting & firewall rules" },
+      { name: "AI ML RAG & Vector Indexing", level: "Advanced", description: "Retrieval-Augmented Generation, vector similarity search, document chunking & LLM context injection" },
+      { name: "Python & FastAPI Microservices", level: "Expert", description: "Async Python pipelines, Pydantic validation, streaming token endpoints & background task queues" },
+      { name: "Cloud Infrastructure & Containerization", level: "Advanced", description: "AWS EC2/ECS remote hosting, Docker builds, Nginx reverse proxy & SSL domain configs" },
     ],
   },
 ]
@@ -62,13 +62,13 @@ export function SkillsMatrix() {
     <section id="skills" className="py-20 px-4 max-w-5xl mx-auto w-full">
       <div className="text-center max-w-xl mx-auto mb-12">
         <span className="text-xs font-mono text-amber-400 uppercase tracking-widest">
-          Technical Capabilities & Stack
+          Role Competencies & Practical Skillset
         </span>
         <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mt-2">
-          Skills & Core Competencies
+          What I Can Build & Deliver
         </h2>
         <p className="text-xs sm:text-sm text-zinc-400 mt-2">
-          Engineered for high performance, sub-second response times, and production rigor across 2+ years of software building.
+          Production-proven competencies recruiters and clients look for across full-stack development, backend security, database indexing, and AI microservices.
         </p>
       </div>
 

@@ -8,7 +8,7 @@
 [![Next.js 16](https://img.shields.io/badge/Next.js-16.3-black?style=flat-square&logo=next.js)](https://nextjs.org/)
 [![React 19](https://img.shields.io/badge/React-19.2-blue?style=flat-square&logo=react)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
-[![LeetCode Solved](https://img.shields.io/badge/LeetCode-1000%2B_Solved-FFA116?style=flat-square&logo=leetcode)](https://leetcode.com/u/Raman_Khiva/)
+[![Shipped Projects](https://img.shields.io/badge/Projects-10%2B_Shipped-emerald?style=flat-square&logo=github)](https://github.com/Raman-Khiva)
 [![CP Peak Rating](https://img.shields.io/badge/CP_Max_Rating-1912-amber?style=flat-square)](https://leetcode.com/u/Raman_Khiva/)
 [![Python & FastAPI](https://img.shields.io/badge/FastAPI-ML_RAG-009688?style=flat-square&logo=fastapi)](https://fastapi.tiangolo.com/)
 
@@ -18,13 +18,11 @@
 
 ## 👋 About Me
 
-Hi! I&apos;m **Ramandeep Singh** (preferred: **Raman Singh**, casual: **Raman**). I am a Full-Stack and AI Systems Engineer with **2+ years of experience** building high-concurrency web applications, ML/RAG systems, and cloud infrastructure, alongside shipping **6+ production projects**.
+Hi! I'm **Ramandeep Singh** (preferred: **Raman Singh**, casual: **Raman**). I am a Full-Stack and AI Systems Engineer with **2+ years of experience** building high-concurrency web applications, ML/RAG systems, and cloud infrastructure across **MERN, PERN, Python & ML stacks**, alongside shipping **10+ production projects**.
 
-I am also an active Competitive Programmer with **1000+ algorithmic problems solved** on LeetCode and a **peak contest rating of 1912**.
-
-- 🔭 **Building**: Full-Stack MERN & Next.js applications, ML RAG pipelines, and automated developer tooling.
-- 🛠️ **Tech Stack**: MERN Stack, Next.js 16, TypeScript & JavaScript, Redux / RTK, PostgreSQL, Prisma, Redis, AWS & Cloud, Docker, C++ & OOPs, Python, FastAPI, ML RAG.
-- 🏆 **Competitive Programming**: 1000+ LeetCode problems solved (`Raman_Khiva`) with a peak rating of **1912**.
+- 🔭 **Building**: Full-Stack MERN & PERN applications, Python ML RAG pipelines, and automated developer tooling.
+- 🛠️ **Tech Stack**: MERN Stack, PERN Stack, Next.js 16, TypeScript, Redux / RTK, PostgreSQL, Prisma, Redis, AWS & Docker, C++ & OOPs, Python, ML Stack.
+- 🏆 **Competitive Programming**: Peak contest rating of **1912 on LeetCode** (`Raman_Khiva`).
 - 🌐 **Portfolio Website**: [ramansingh.me](https://ramansingh.me)
 - 📬 **Contact**: [ramandeep01167@gmail.com](mailto:ramandeep01167@gmail.com)
 
@@ -35,10 +33,10 @@ I am also an active Competitive Programmer with **1000+ algorithmic problems sol
 | Metric | Details |
 | :--- | :--- |
 | **Full-Stack Experience** | **2+ Years** building production software |
-| **Shipped Projects** | **6+ Projects** designed, developed & deployed |
-| **LeetCode Solved** | **1000+ Problems** (Data Structures & Algorithms) |
-| **Competitive Programming** | **1912 Peak Rating** on LeetCode (`Raman_Khiva`) |
-| **Core Specialization** | MERN, Next.js, Redux/RTK, Postgres, Prisma, Redis, C++/OOPs, Python/FastAPI ML RAG |
+| **Shipped Projects** | **10+ Projects** designed, developed & deployed |
+| **Primary Stacks** | **MERN, PERN, ML & Python Stacks** |
+| **CP Peak Rating** | **1912 Rating** on LeetCode (`Raman_Khiva`) |
+| **Core Specialization** | MERN, PERN, Next.js 16, Redux/RTK, Postgres, Prisma, Redis, C++/OOPs, Python/FastAPI ML Stack |
 
 ---
 
@@ -75,11 +73,11 @@ I am also an active Competitive Programmer with **1000+ algorithmic problems sol
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                            RAMAN SINGH TECH STACK                            │
 ├──────────────────────┬──────────────────────┬───────────────────────────────┤
-│ Frontend & Web       │ Backend & Cloud      │ Algorithms & AI               │
+│ Frontend & Web       │ Backend & Cloud      │ System Architecture & AI      │
 ├──────────────────────┼──────────────────────┼───────────────────────────────┤
 │ • MERN Stack         │ • Node.js & Express  │ • C++ & OOP Principles        │
-│ • Next.js 16 (App)   │ • PostgreSQL         │ • 1000+ LeetCode Solved       │
-│ • React 19           │ • Prisma ORM         │ • 1912 Max CP Rating          │
+│ • Next.js 16 (App)   │ • PostgreSQL         │ • Sub-40ms Performance SLA    │
+│ • React 19           │ • Prisma ORM         │ • 10+ Production Projects     │
 │ • TypeScript & JS    │ • Redis Caching      │ • Python & FastAPI            │
 │ • Redux / RTK        │ • AWS & Cloud        │ • ML & RAG Pipelines          │
 │ • Tailwind CSS v4    │ • Docker Deployment  │ • Data Structures & Algo      │

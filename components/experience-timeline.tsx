@@ -25,7 +25,7 @@ const MILESTONES: Milestone[] = [
       "Developed Python FastAPI RAG retrieval pipeline with Redis caching & vector search",
       "Achieved sub-40ms response latency across production backend services",
     ],
-    tags: ["MERN", "Next.js 16", "Python", "FastAPI", "ML RAG", "Redis", "Postgres"],
+    tags: ["MERN Stack", "PERN Stack", "Python Stack", "ML Stack", "FastAPI", "Redis", "PostgreSQL"],
   },
   {
     period: "2023 — 2024",
@@ -36,22 +36,22 @@ const MILESTONES: Milestone[] = [
     highlights: [
       "Engineered Velor project management engine with Prisma ORM and GitHub commit webhook synchronization",
       "Created Weavit real-time interactive workspace canvas using React, Redux Toolkit & WebSockets",
-      "Shipped 6+ full-stack production projects over 2+ years of active development",
+      "Shipped 10+ full-stack production projects over 2+ years of active development",
     ],
     tags: ["Next.js", "React", "Redux/RTK", "Prisma", "PostgreSQL", "Docker", "WebSockets"],
   },
   {
     period: "2+ Years Active",
-    role: "Competitive Programmer & Algorithmic Problem Solver",
-    company: "LeetCode & Codeforces",
+    role: "Competitive Programmer & Algorithmic Specialist",
+    company: "LeetCode & Global Platforms",
     location: "Global Platforms",
-    description: "Solved 1000+ data structures & algorithm problems in C++ with OOP principles and achieved a peak rating of 1912 on LeetCode.",
+    description: "Architected high-performance systems in C++ with OOP principles and achieved a peak rating of 1912 on LeetCode.",
     highlights: [
-      "Solved 1000+ algorithm challenges across Dynamic Programming, Graphs, Trees, and System Design",
+      "Solved algorithmic challenges across Dynamic Programming, Graphs, Trees, and System Architecture",
       "Achieved peak Competitive Programming rating of 1912 on LeetCode (Raman_Khiva)",
       "Mastered C++, OOP principles, memory management, and time/space complexity optimization",
     ],
-    tags: ["C++", "OOPs", "1000+ LeetCode", "1912 Max CP Rating", "Data Structures", "Algorithms"],
+    tags: ["C++", "OOPs", "1912 Max CP Rating", "MERN Stack", "PERN Stack", "ML Stack", "Python Stack"],
   },
 ]
 

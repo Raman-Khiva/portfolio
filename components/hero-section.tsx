@@ -8,12 +8,14 @@ import {
   GitCommit,
   Zap,
   ChevronRight,
+  ChevronDown,
   Sparkles,
   Search,
   FileText,
   Mail,
   Globe,
   Trophy,
+  Cpu,
 } from "lucide-react"
 import {
   GithubIcon,
@@ -177,52 +179,6 @@ export const PRESET_PLANS: Record<string, ProjectPlanData> = {
 }
 
 export function HeroSection({ onSelectPrompt }: HeroSectionProps) {
-  const [customPrompt, setCustomPrompt] = useState("")
-
-  const handleCustomSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!customPrompt.trim()) return
-
-    const customPlan: ProjectPlanData = {
-      title: customPrompt.trim().length > 40 ? customPrompt.trim().substring(0, 40) + "..." : customPrompt.trim(),
-      prompt: customPrompt,
-      category: "Custom Architecture",
-      stack: ["Next.js 16", "TypeScript", "Tailwind CSS", "Node.js API", "PostgreSQL"],
-      timeline: "2-3 Weeks",
-      architecture: {
-        frontend: "Modern Next.js 16 App Router with responsive dark glassmorphic interface.",
-        backend: "Type-safe Node.js REST API with input validation & rate limiting.",
-        database: "PostgreSQL database schema with indexed queries & migration safety.",
-        cloud: "Containerized Docker setup ready for Vercel, AWS, or Cloud deployment.",
-      },
-      phases: [
-        {
-          title: "System Design & Data Schema",
-          description: "Define architecture components and database entity relations.",
-          tasks: ["Technical specification doc", "Database ERD diagram", "API contract definition"],
-        },
-        {
-          title: "Core Implementation Sprint",
-          description: "Build frontend components and connect backend service layer.",
-          tasks: ["UI component library", "State management & caching", "Error boundary handling"],
-        },
-        {
-          title: "Testing & Deployment",
-          description: "Automated end-to-end testing and production pipeline configuration.",
-          tasks: ["E2E integration test suite", "Lighthouse speed audit", "CI/CD release"],
-        },
-      ],
-      stats: {
-        latency: "<35ms",
-        uptime: "99.9%",
-        throughput: "1,200 req/s",
-      },
-    }
-
-    onSelectPrompt(customPlan)
-    setCustomPrompt("")
-  }
-
   return (
     <section id="overview" className="relative pt-32 pb-16 px-4 flex flex-col items-center justify-center">
       <div className="max-w-4xl w-full mx-auto flex flex-col items-center text-center gap-8">
@@ -260,7 +216,7 @@ export function HeroSection({ onSelectPrompt }: HeroSectionProps) {
 
           {/* Bio / Summary */}
           <p className="text-zinc-400 text-sm sm:text-base leading-relaxed font-normal max-w-xl mx-auto">
-            Building high-performance MERN & Next.js web applications, ML/RAG retrieval systems, and solving complex algorithmic challenges. 2+ years building 6+ production projects with 1000+ LeetCode solved (1912 CP rating).
+            Building high-performance applications across MERN, PERN, Python & ML stacks. 2+ years engineering 10+ production projects with a 1912 LeetCode CP rating.
           </p>
         </div>
 
@@ -331,23 +287,23 @@ export function HeroSection({ onSelectPrompt }: HeroSectionProps) {
             <div className="flex items-center gap-1.5 text-zinc-400 text-xs font-medium mb-1">
               <Layers className="w-3.5 h-3.5 text-cyan-400" />
             </div>
-            <div className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">6+ Projects</div>
+            <div className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">10+ Projects</div>
             <div className="text-[11px] text-zinc-400 font-normal">Built & Shipped</div>
           </div>
 
           {/* Stat 3 */}
           <div className="flex flex-col items-center justify-center py-2 md:py-0 px-2 text-center">
             <div className="flex items-center gap-1.5 text-zinc-400 text-xs font-medium mb-1">
-              <Trophy className="w-3.5 h-3.5 text-amber-400" />
+              <Cpu className="w-3.5 h-3.5 text-emerald-400" />
             </div>
-            <div className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">1000+</div>
-            <div className="text-[11px] text-zinc-400 font-normal">LeetCode Solved</div>
+            <div className="text-base sm:text-lg font-extrabold text-white tracking-tight">MERN • PERN • ML</div>
+            <div className="text-[11px] text-zinc-400 font-normal">MERN, PERN & Python Stacks</div>
           </div>
 
           {/* Stat 4 */}
           <div className="flex flex-col items-center justify-center py-2 md:py-0 px-2 text-center">
             <div className="flex items-center gap-1.5 text-zinc-400 text-xs font-medium mb-1">
-              <Zap className="w-3.5 h-3.5 text-purple-400" />
+              <Trophy className="w-3.5 h-3.5 text-amber-400" />
             </div>
             <div className="text-xl sm:text-2xl font-extrabold text-amber-400 tracking-tight">1912</div>
             <div className="text-[11px] text-zinc-400 font-normal">LeetCode CP Max Rating</div>
@@ -357,192 +313,229 @@ export function HeroSection({ onSelectPrompt }: HeroSectionProps) {
         {/* 4 Tech & Capability Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full mt-2">
           
-          {/* Card 1: MERN & Next.js */}
+          {/* Card 1: Full-Stack & MERN */}
           <div
             onClick={() => onSelectPrompt(PRESET_PLANS["oasian"])}
-            className="group p-5 rounded-2xl bg-[#131316] hover:bg-[#18181d] border border-[#222228] hover:border-amber-500/50 transition-all duration-300 cursor-pointer text-left flex flex-col gap-3 card-glow"
+            className="group p-5 rounded-2xl bg-[#131316] hover:bg-[#18181d] border border-[#222228] hover:border-amber-500/50 transition-all duration-300 cursor-pointer text-left flex flex-col gap-3 card-glow justify-between"
           >
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-xl bg-[#1c1c21] border border-[#2a2a32] flex items-center justify-center text-amber-400">
-                <ReactIcon className="w-4 h-4" />
-              </div>
-              <div className="w-8 h-8 rounded-xl bg-[#1c1c21] border border-[#2a2a32] flex items-center justify-center text-white">
-                <NextIcon className="w-4 h-4" />
-              </div>
-            </div>
             <div>
-              <h3 className="text-sm font-semibold text-white tracking-tight mb-1 flex items-center gap-1.5">
-                Full-Stack & MERN Engine
-              </h3>
-              <p className="text-xs text-zinc-400 leading-relaxed">
-                MERN Stack, Next.js 16, TypeScript, Redux & RTK — reactive, sub-second web applications.
-              </p>
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-8 h-8 rounded-xl bg-[#1c1c21] border border-[#2a2a32] flex items-center justify-center text-amber-400">
+                  <ReactIcon className="w-4 h-4" />
+                </div>
+                <div className="w-8 h-8 rounded-xl bg-[#1c1c21] border border-[#2a2a32] flex items-center justify-center text-white">
+                  <NextIcon className="w-4 h-4" />
+                </div>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-white tracking-tight mb-1 flex items-center gap-1.5">
+                  Full-Stack & MERN Engine
+                </h3>
+                <p className="text-xs text-zinc-400 leading-relaxed">
+                  MERN Stack, Next.js 16, TypeScript, Redux & RTK — reactive, sub-second web applications.
+                </p>
+              </div>
             </div>
-            <div className="flex flex-wrap gap-1 mt-auto pt-1">
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1c1c24] border border-[#2a2a35] text-zinc-300">
-                Next.js 16
-              </span>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1c1c24] border border-[#2a2a35] text-zinc-300">
-                Redux / RTK
-              </span>
+
+            <div className="space-y-2 mt-2 pt-2 border-t border-[#1c1c24]">
+              <div className="flex flex-wrap gap-1">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1c1c24] border border-[#2a2a35] text-zinc-300">
+                  Next.js 16
+                </span>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1c1c24] border border-[#2a2a35] text-zinc-300">
+                  Redux / RTK
+                </span>
+              </div>
+              <a
+                href="#tech-stack"
+                onClick={(e) => {
+                  e.stopPropagation()
+                  const el = document.getElementById("tech-stack")
+                  if (el) el.scrollIntoView({ behavior: "smooth" })
+                }}
+                className="flex items-center justify-between text-xs text-amber-400 hover:text-amber-300 font-medium group/btn pt-1"
+              >
+                <span>View More Tools</span>
+                <ChevronRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
+              </a>
             </div>
           </div>
 
           {/* Card 2: Backend, DBs & Cloud */}
           <div
             onClick={() => onSelectPrompt(PRESET_PLANS["velor"])}
-            className="group p-5 rounded-2xl bg-[#131316] hover:bg-[#18181d] border border-[#222228] hover:border-cyan-500/50 transition-all duration-300 cursor-pointer text-left flex flex-col gap-3 card-glow"
+            className="group p-5 rounded-2xl bg-[#131316] hover:bg-[#18181d] border border-[#222228] hover:border-cyan-500/50 transition-all duration-300 cursor-pointer text-left flex flex-col gap-3 card-glow justify-between"
           >
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-xl bg-[#1c1c21] border border-[#2a2a32] flex items-center justify-center text-emerald-400">
-                <NodeIcon className="w-4 h-4" />
-              </div>
-              <div className="w-8 h-8 rounded-xl bg-[#1c1c21] border border-[#2a2a32] flex items-center justify-center text-cyan-400">
-                <PostgresIcon className="w-4 h-4" />
-              </div>
-            </div>
             <div>
-              <h3 className="text-sm font-semibold text-white tracking-tight mb-1">
-                Backend, DBs & Cloud
-              </h3>
-              <p className="text-xs text-zinc-400 leading-relaxed">
-                Node.js, PostgreSQL, Prisma, Redis, AWS & Docker — high-concurrency microservices.
-              </p>
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-8 h-8 rounded-xl bg-[#1c1c21] border border-[#2a2a32] flex items-center justify-center text-emerald-400">
+                  <NodeIcon className="w-4 h-4" />
+                </div>
+                <div className="w-8 h-8 rounded-xl bg-[#1c1c21] border border-[#2a2a32] flex items-center justify-center text-cyan-400">
+                  <PostgresIcon className="w-4 h-4" />
+                </div>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-white tracking-tight mb-1">
+                  Backend, PERN DBs & Cloud
+                </h3>
+                <p className="text-xs text-zinc-400 leading-relaxed">
+                  PERN Stack, PostgreSQL, Prisma, Redis, AWS & Docker — high-concurrency microservices.
+                </p>
+              </div>
             </div>
-            <div className="flex flex-wrap gap-1 mt-auto pt-1">
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1c1c24] border border-[#2a2a35] text-zinc-300">
-                PostgreSQL
-              </span>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1c1c24] border border-[#2a2a35] text-zinc-300">
-                Docker & AWS
-              </span>
+
+            <div className="space-y-2 mt-2 pt-2 border-t border-[#1c1c24]">
+              <div className="flex flex-wrap gap-1">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1c1c24] border border-[#2a2a35] text-zinc-300">
+                  PERN Stack
+                </span>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1c1c24] border border-[#2a2a35] text-zinc-300">
+                  Docker & AWS
+                </span>
+              </div>
+              <a
+                href="#tech-stack"
+                onClick={(e) => {
+                  e.stopPropagation()
+                  const el = document.getElementById("tech-stack")
+                  if (el) el.scrollIntoView({ behavior: "smooth" })
+                }}
+                className="flex items-center justify-between text-xs text-cyan-400 hover:text-cyan-300 font-medium group/btn pt-1"
+              >
+                <span>View More Tools</span>
+                <ChevronRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
+              </a>
             </div>
           </div>
 
           {/* Card 3: C++, OOPs & CP */}
           <div
             onClick={() => onSelectPrompt(PRESET_PLANS["weavit"])}
-            className="group p-5 rounded-2xl bg-[#131316] hover:bg-[#18181d] border border-[#222228] hover:border-purple-500/50 transition-all duration-300 cursor-pointer text-left flex flex-col gap-3 card-glow"
+            className="group p-5 rounded-2xl bg-[#131316] hover:bg-[#18181d] border border-[#222228] hover:border-purple-500/50 transition-all duration-300 cursor-pointer text-left flex flex-col gap-3 card-glow justify-between"
           >
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-xl bg-[#1c1c21] border border-[#2a2a32] flex items-center justify-center text-cyan-400">
-                <CppIcon className="w-4 h-4" />
-              </div>
-              <div className="w-8 h-8 rounded-xl bg-[#1c1c21] border border-[#2a2a32] flex items-center justify-center text-amber-400">
-                <LeetCodeIcon className="w-4 h-4" />
-              </div>
-            </div>
             <div>
-              <h3 className="text-sm font-semibold text-white tracking-tight mb-1">
-                C++, OOPs & Competitive Prog.
-              </h3>
-              <p className="text-xs text-zinc-400 leading-relaxed">
-                C++, Object-Oriented Design, Data Structures & Algorithms — 1000+ LeetCode (1912 Rating).
-              </p>
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-8 h-8 rounded-xl bg-[#1c1c21] border border-[#2a2a32] flex items-center justify-center text-cyan-400">
+                  <CppIcon className="w-4 h-4" />
+                </div>
+                <div className="w-8 h-8 rounded-xl bg-[#1c1c21] border border-[#2a2a32] flex items-center justify-center text-amber-400">
+                  <LeetCodeIcon className="w-4 h-4" />
+                </div>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-white tracking-tight mb-1">
+                  C++, OOPs & Competitive Prog.
+                </h3>
+                <p className="text-xs text-zinc-400 leading-relaxed">
+                  C++, Object-Oriented Design, Data Structures & Algorithms — peak rating of 1912 on LeetCode.
+                </p>
+              </div>
             </div>
-            <div className="flex flex-wrap gap-1 mt-auto pt-1">
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1c1c24] border border-[#2a2a35] text-zinc-300">
-                1000+ LeetCode
-              </span>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1c1c24] border border-[#2a2a35] text-amber-400 font-bold">
-                1912 Rating
-              </span>
+
+            <div className="space-y-2 mt-2 pt-2 border-t border-[#1c1c24]">
+              <div className="flex flex-wrap gap-1">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1c1c24] border border-[#2a2a35] text-zinc-300">
+                  C++ / OOPs
+                </span>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1c1c24] border border-[#2a2a35] text-amber-400 font-bold">
+                  1912 CP Rating
+                </span>
+              </div>
+              <a
+                href="#tech-stack"
+                onClick={(e) => {
+                  e.stopPropagation()
+                  const el = document.getElementById("tech-stack")
+                  if (el) el.scrollIntoView({ behavior: "smooth" })
+                }}
+                className="flex items-center justify-between text-xs text-purple-400 hover:text-purple-300 font-medium group/btn pt-1"
+              >
+                <span>View More Tools</span>
+                <ChevronRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
+              </a>
             </div>
           </div>
 
           {/* Card 4: AI ML & RAG Systems */}
           <div
             onClick={() => onSelectPrompt(PRESET_PLANS["rag-ml"])}
-            className="group p-5 rounded-2xl bg-[#131316] hover:bg-[#18181d] border border-[#222228] hover:border-emerald-500/50 transition-all duration-300 cursor-pointer text-left flex flex-col gap-3 card-glow"
+            className="group p-5 rounded-2xl bg-[#131316] hover:bg-[#18181d] border border-[#222228] hover:border-emerald-500/50 transition-all duration-300 cursor-pointer text-left flex flex-col gap-3 card-glow justify-between"
           >
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-xl bg-[#1c1c21] border border-[#2a2a32] flex items-center justify-center text-amber-400">
-                <PythonIcon className="w-4 h-4" />
-              </div>
-              <div className="w-8 h-8 rounded-xl bg-[#1c1c21] border border-[#2a2a32] flex items-center justify-center text-emerald-400">
-                <Sparkles className="w-4 h-4" />
-              </div>
-            </div>
             <div>
-              <h3 className="text-sm font-semibold text-white tracking-tight mb-1">
-                AI / ML & RAG Pipelines
-              </h3>
-              <p className="text-xs text-zinc-400 leading-relaxed">
-                Python, FastAPI, RAG building & Vector DBs — context retrieval & autonomous workflows.
-              </p>
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-8 h-8 rounded-xl bg-[#1c1c21] border border-[#2a2a32] flex items-center justify-center text-amber-400">
+                  <PythonIcon className="w-4 h-4" />
+                </div>
+                <div className="w-8 h-8 rounded-xl bg-[#1c1c21] border border-[#2a2a32] flex items-center justify-center text-emerald-400">
+                  <Sparkles className="w-4 h-4" />
+                </div>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-white tracking-tight mb-1">
+                  AI / ML & RAG Pipelines
+                </h3>
+                <p className="text-xs text-zinc-400 leading-relaxed">
+                  Python, FastAPI, RAG building & Vector DBs — context retrieval & autonomous workflows.
+                </p>
+              </div>
             </div>
-            <div className="flex flex-wrap gap-1 mt-auto pt-1">
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1c1c24] border border-[#2a2a35] text-zinc-300">
-                FastAPI
-              </span>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1c1c24] border border-[#2a2a35] text-zinc-300">
-                ML (RAG)
-              </span>
+
+            <div className="space-y-2 mt-2 pt-2 border-t border-[#1c1c24]">
+              <div className="flex flex-wrap gap-1">
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1c1c24] border border-[#2a2a35] text-zinc-300">
+                  FastAPI
+                </span>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1c1c24] border border-[#2a2a35] text-zinc-300">
+                  ML (RAG)
+                </span>
+              </div>
+              <a
+                href="#tech-stack"
+                onClick={(e) => {
+                  e.stopPropagation()
+                  const el = document.getElementById("tech-stack")
+                  if (el) el.scrollIntoView({ behavior: "smooth" })
+                }}
+                className="flex items-center justify-between text-xs text-emerald-400 hover:text-emerald-300 font-medium group/btn pt-1"
+              >
+                <span>View More Tools</span>
+                <ChevronRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
+              </a>
             </div>
           </div>
         </div>
 
-        {/* Interactive Custom Architecture Prompt Input */}
-        <form onSubmit={handleCustomSubmit} className="w-full max-w-xl mt-4">
-          <div className="relative flex items-center">
-            <div className="absolute left-4 text-zinc-500">
-              <Search className="w-4 h-4" />
-            </div>
-            <input
-              type="text"
-              value={customPrompt}
-              onChange={(e) => setCustomPrompt(e.target.value)}
-              placeholder="Ask Raman to plan a system (e.g., MERN SaaS with Redis)..."
-              className="w-full py-3.5 pl-11 pr-28 rounded-2xl bg-[#131317] border border-[#262630] focus:border-amber-500/50 focus:outline-none text-xs sm:text-sm text-white placeholder-zinc-500 transition shadow-inner"
-            />
-            <button
-              type="submit"
-              className="absolute right-2 px-3 py-1.5 rounded-xl bg-white hover:bg-zinc-200 text-black font-medium text-xs flex items-center gap-1 transition shadow"
-            >
-              Contact Now <Sparkles className="w-3 h-3" />
-            </button>
-          </div>
-        </form>
+        {/* View All Tech Stacks & Capabilities Scroll Button */}
+        <div className="flex justify-center mt-3">
+          <a
+            href="#tech-stack"
+            onClick={(e) => {
+              e.preventDefault()
+              const el = document.getElementById("tech-stack")
+              if (el) el.scrollIntoView({ behavior: "smooth" })
+            }}
+            className="px-4.5 py-2 rounded-xl bg-[#141418] hover:bg-[#1a1a22] border border-[#2a2a35] hover:border-amber-400/50 text-xs text-zinc-300 hover:text-white font-medium transition flex items-center gap-2 group cursor-pointer"
+          >
+            <span>View All Tools & Technologies</span>
+            <ChevronDown className="w-3.5 h-3.5 text-amber-400 group-hover:translate-y-0.5 transition-transform" />
+          </a>
+        </div>
 
-        {/* Quick Example Architecture Actions Pills */}
-        <div className="flex flex-col items-center gap-3 mt-2 w-full">
-          <div className="text-xs text-zinc-400 font-normal tracking-wide">
-            Inspect Raman&apos;s featured project architecture plans
-          </div>
-
-          <div className="flex flex-wrap items-center justify-center gap-2 max-w-3xl">
-            <button
-              onClick={() => onSelectPrompt(PRESET_PLANS["oasian"])}
-              className="px-3.5 py-1.5 rounded-full bg-[#121216] hover:bg-[#1c1c24] border border-[#22222a] hover:border-amber-400 text-xs text-zinc-300 font-normal transition flex items-center gap-1.5 group cursor-pointer"
-            >
-              <ChevronRight className="w-3.5 h-3.5 text-zinc-400 group-hover:text-amber-400 transition" />
-              <span>Oasian (Startup Platform Plan)</span>
-            </button>
-
-            <button
-              onClick={() => onSelectPrompt(PRESET_PLANS["velor"])}
-              className="px-3.5 py-1.5 rounded-full bg-[#121216] hover:bg-[#1c1c24] border border-[#22222a] hover:border-cyan-400 text-xs text-zinc-300 font-normal transition flex items-center gap-1.5 group cursor-pointer"
-            >
-              <ChevronRight className="w-3.5 h-3.5 text-zinc-400 group-hover:text-cyan-400 transition" />
-              <span>Velor (Workflow Engine Plan)</span>
-            </button>
-
-            <button
-              onClick={() => onSelectPrompt(PRESET_PLANS["weavit"])}
-              className="px-3.5 py-1.5 rounded-full bg-[#121216] hover:bg-[#1c1c24] border border-[#22222a] hover:border-purple-400 text-xs text-zinc-300 font-normal transition flex items-center gap-1.5 group cursor-pointer"
-            >
-              <ChevronRight className="w-3.5 h-3.5 text-zinc-400 group-hover:text-purple-400 transition" />
-              <span>Weavit (Interactive Canvas Plan)</span>
-            </button>
-
-            <button
-              onClick={() => onSelectPrompt(PRESET_PLANS["rag-ml"])}
-              className="px-3.5 py-1.5 rounded-full bg-[#121216] hover:bg-[#1c1c24] border border-[#22222a] hover:border-emerald-400 text-xs text-zinc-300 font-normal transition flex items-center gap-1.5 group cursor-pointer"
-            >
-              <ChevronRight className="w-3.5 h-3.5 text-zinc-400 group-hover:text-emerald-400 transition" />
-              <span>AI ML RAG Pipeline Plan</span>
-            </button>
-          </div>
+        {/* Recruiter & Client Direct Call-To-Action Row */}
+        <div className="flex flex-wrap items-center justify-center gap-4 mt-6">
+          <a
+            href="#projects"
+            className="px-6 py-3 rounded-xl bg-white hover:bg-zinc-200 text-black font-semibold text-xs sm:text-sm flex items-center gap-2 transition shadow-lg shadow-white/5 active:scale-95"
+          >
+            <Layers className="w-4 h-4 text-amber-600" /> Explore Featured Projects
+          </a>
+          <a
+            href="#contact"
+            className="px-6 py-3 rounded-xl bg-[#131317] hover:bg-[#1c1c24] border border-[#262632] hover:border-amber-400/50 text-white font-semibold text-xs sm:text-sm flex items-center gap-2 transition active:scale-95"
+          >
+            <Mail className="w-4 h-4 text-amber-400" /> Get in Touch
+          </a>
         </div>
 
       </div>

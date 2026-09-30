@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import { Code2, Server, Cpu, Cloud, CheckCircle2 } from "lucide-react"
+import { Code2, Server, Cpu, Cloud, CheckCircle2, Trophy } from "lucide-react"
 
 interface SkillCategory {
   title: string
@@ -12,47 +12,47 @@ interface SkillCategory {
 
 const SKILLS_DATA: SkillCategory[] = [
   {
-    title: "Frontend & UI Engineering",
+    title: "Full-Stack & Web Engineering",
     icon: Code2,
     color: "text-amber-400",
     skills: [
-      { name: "Next.js 16 (App Router)", level: "Expert", description: "RSC, Server Actions, Streaming SSR, ISR" },
-      { name: "React 19 & TypeScript", level: "Expert", description: "Hooks, Strict Typing, State Machines, Suspense" },
-      { name: "Tailwind CSS & Animation", level: "Expert", description: "Custom Design Tokens, Micro-interactions" },
-      { name: "HTML5 Canvas & WebGL", level: "Advanced", description: "Hardware-accelerated 2D/3D rendering" },
+      { name: "MERN Stack & Next.js 16", level: "Expert", description: "MongoDB, Express, React, Node.js, Next.js App Router" },
+      { name: "JavaScript & TypeScript", level: "Expert", description: "ES6+, Async programming, Strict typing & Interfaces" },
+      { name: "Redux & Redux Toolkit (RTK)", level: "Expert", description: "Centralized state management, RTK Query, Slices" },
+      { name: "Tailwind CSS & Modern UI", level: "Expert", description: "Custom design systems, pitch-dark themes, micro-animations" },
     ],
   },
   {
-    title: "Backend & Systems",
+    title: "Backend, Databases & Cloud",
     icon: Server,
     color: "text-cyan-400",
     skills: [
-      { name: "Node.js & Express / NestJS", level: "Expert", description: "High-throughput asynchronous APIs" },
-      { name: "Python & FastAPI", level: "Expert", description: "AsyncIO, Pydantic, Microservices" },
-      { name: "Golang Backend Services", level: "Advanced", description: "Goroutines, Channel concurrency" },
-      { name: "GraphQL & RESTful APIs", level: "Expert", description: "Federated Subgraphs, OpenAPI specs" },
+      { name: "Node.js & Express APIs", level: "Expert", description: "RESTful architecture, Middleware, JWT Auth" },
+      { name: "PostgreSQL & Prisma ORM", level: "Expert", description: "Database ERD, Connection pooling, Query optimization" },
+      { name: "Redis Caching & Pub/Sub", level: "Expert", description: "Sliding window rate limiters, Session caching, Message queues" },
+      { name: "AWS & Docker Deployment", level: "Advanced", description: "Containerized builds, ECS cloud services, Automated CI/CD" },
     ],
   },
   {
-    title: "AI, Data & Vector DBs",
-    icon: Cpu,
-    color: "text-purple-400",
+    title: "C++, OOPs & Competitive Programming",
+    icon: Trophy,
+    color: "text-amber-400",
     skills: [
-      { name: "LLM Orchestration (LangChain)", level: "Expert", description: "RAG pipelines, Autonomous Agent Loops" },
-      { name: "Pinecone / Qdrant Vector DB", level: "Expert", description: "Semantic Search & Context Indexing" },
-      { name: "PostgreSQL & Prisma / Drizzle", level: "Expert", description: "Complex Queries, ERDs, Index tuning" },
-      { name: "Redis Caching & Pub/Sub", level: "Expert", description: "Sliding window rate limiters, Session store" },
+      { name: "C++ Programming & STL", level: "Expert", description: "Standard Template Library, Pointers, Memory management" },
+      { name: "Object-Oriented Programming (OOPs)", level: "Expert", description: "Inheritance, Polymorphism, Encapsulation, Abstraction" },
+      { name: "1000+ Solved LeetCode Problems", level: "Expert", description: "Data Structures, Algorithms, Graph & DP techniques" },
+      { name: "1912 Max CP Rating (LeetCode)", level: "Competitive", description: "High-rank contest performance & algorithmic optimization" },
     ],
   },
   {
-    title: "Cloud & DevOps Infrastructure",
-    icon: Cloud,
+    title: "AI / ML & Python Development",
+    icon: Cpu,
     color: "text-emerald-400",
     skills: [
-      { name: "Docker & Kubernetes", level: "Advanced", description: "Multi-stage builds, Container orchestration" },
-      { name: "AWS Services (ECS, S3, Lambda)", level: "Advanced", description: "Serverless architectures & IAM policies" },
-      { name: "GitHub Actions CI/CD", level: "Expert", description: "Automated test suites & deployment pipelines" },
-      { name: "Performance & Security Audit", level: "Expert", description: "Sub-50ms TTFB, OWASP Top 10 mitigation" },
+      { name: "Python Engineering", level: "Expert", description: "Clean Python code, Data processing, Async IO scripts" },
+      { name: "FastAPI Backend Framework", level: "Expert", description: "Pydantic validation, Async endpoints, OpenAPI specs" },
+      { name: "ML & RAG Building", level: "Advanced", description: "Retrieval-Augmented Generation, Vector embeddings, LLM context" },
+      { name: "Production System Deployment", level: "Expert", description: "6+ Shipped production applications over 2+ years" },
     ],
   },
 ]
@@ -62,13 +62,13 @@ export function SkillsMatrix() {
     <section id="skills" className="py-20 px-4 max-w-5xl mx-auto w-full">
       <div className="text-center max-w-xl mx-auto mb-12">
         <span className="text-xs font-mono text-amber-400 uppercase tracking-widest">
-          Technical Stack & Capabilities
+          Technical Capabilities & Stack
         </span>
         <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mt-2">
-          Architectural Expertise
+          Skills & Core Competencies
         </h2>
         <p className="text-xs sm:text-sm text-zinc-400 mt-2">
-          Engineered for sub-second latency, zero downtime, and production maintainability.
+          Engineered for high performance, sub-second response times, and production rigor across 2+ years of software building.
         </p>
       </div>
 

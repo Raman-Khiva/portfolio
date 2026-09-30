@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useState } from "react"
-import Image from "next/image"
 import {
   Briefcase,
   Layers,
@@ -12,17 +11,20 @@ import {
   Search,
   FileText,
   Mail,
+  Globe,
+  Trophy,
 } from "lucide-react"
 import {
   GithubIcon,
   LinkedinIcon,
-  TwitterIcon,
   ReactIcon,
   NextIcon,
   NodeIcon,
   PythonIcon,
   DockerIcon,
   PostgresIcon,
+  LeetCodeIcon,
+  CppIcon,
 } from "./icons"
 import { ProjectPlanData } from "./project-plan-modal"
 
@@ -31,144 +33,144 @@ interface HeroSectionProps {
 }
 
 export const PRESET_PLANS: Record<string, ProjectPlanData> = {
-  "ai-agent": {
-    title: "AI Autonomous Coding Agent",
-    prompt: "A Python & TypeScript AI Agent that autonomously plans, executes, and tests codebase changes",
-    category: "AI & ML System",
-    stack: ["Python", "LangChain", "Next.js 16", "FastAPI", "Pinecone Vector DB"],
+  "oasian": {
+    title: "Oasian — Full-Stack Startup Application",
+    prompt: "A high-performance startup platform built with MERN stack, Next.js, Redis & PostgreSQL",
+    category: "Full-Stack SaaS",
+    stack: ["MERN", "Next.js 16", "TypeScript", "Prisma", "PostgreSQL", "Redis"],
     timeline: "3 Weeks",
     architecture: {
-      frontend: "Next.js 16 App Router with streaming UI SSE & real-time log rendering.",
-      backend: "FastAPI Python backend with AsyncIO task queues and vector context retrieval.",
-      database: "Pinecone Vector DB for code indexing + PostgreSQL for user session storage.",
-      cloud: "Dockerized containers on AWS ECS with automated GitHub Actions CI/CD.",
+      frontend: "Next.js 16 App Router with responsive dark glassmorphic interface and Redux Toolkit state.",
+      backend: "Type-safe Node.js & Express REST API with JWT auth and Redis caching layer.",
+      database: "PostgreSQL with Prisma ORM schema indexing & connection pooling.",
+      cloud: "Docker containers deployed on AWS cloud with automated CI/CD pipeline.",
     },
     phases: [
       {
-        title: "Agent Loop & Context Memory",
-        description: "Set up vector embeddings and LLM reasoning chain.",
-        tasks: ["AST parsing & code chunking", "RAG pipeline implementation", "Prompt safety guardrails"],
+        title: "Platform Core Architecture",
+        description: "Set up multi-tenant system structure and authentication flow.",
+        tasks: ["Database ERD & Prisma schema", "JWT & OAuth authorization", "API contract setup"],
       },
       {
-        title: "Execution Sandbox",
-        description: "Isolated Docker execution environment for code testing.",
-        tasks: ["Container orchestration", "Execution timeout safety", "Diff preview renderer"],
+        title: "Frontend Dashboard & Integration",
+        description: "Develop responsive Next.js components with RTK state management.",
+        tasks: ["Real-time data feeds", "Redux Toolkit store", "UI design tokens"],
       },
       {
-        title: "Streaming UI & Verification",
-        description: "Real-time user feedback UI with interactive approval steps.",
-        tasks: ["Server-Sent Events integration", "Interactive diff viewer", "Performance benchmarks"],
+        title: "Performance & Cloud Release",
+        description: "Redis caching integration and automated Docker release.",
+        tasks: ["Redis sliding window caching", "AWS Docker containerization", "End-to-end audit"],
       },
     ],
     stats: {
-      latency: "<120ms",
-      uptime: "99.9%",
-      throughput: "500 req/s",
-    },
-  },
-  "ecommerce-saas": {
-    title: "Full-Stack Next.js 16 E-Commerce Engine",
-    prompt: "High-performance multi-tenant e-commerce platform with Stripe sub-second checkout",
-    category: "Full Stack SaaS",
-    stack: ["Next.js 16", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL", "Stripe API"],
-    timeline: "4 Weeks",
-    architecture: {
-      frontend: "React Server Components with dynamic ISR (Incremental Static Regeneration).",
-      backend: "Next.js Server Actions with Edge middleware for geo-routing.",
-      database: "PostgreSQL on Supabase with Prisma ORM & Redis caching layer.",
-      cloud: "Vercel Enterprise Edge Network with Cloudflare DDoS protection.",
-    },
-    phases: [
-      {
-        title: "Catalog & Multi-Tenant Engine",
-        description: "Implement catalog indexing and dynamic tenant branding.",
-        tasks: ["Product search & filter index", "Multi-currency support", "Inventory webhook handler"],
-      },
-      {
-        title: "Sub-Second Checkout Flow",
-        description: "Integrate Stripe PaymentIntents with guest and customer accounts.",
-        tasks: ["Stripe webhook processing", "Cart synchronization", "Receipt PDF generator"],
-      },
-      {
-        title: "Merchant Analytics Dashboard",
-        description: "Real-time sales revenue, inventory alerts, and user cohorts.",
-        tasks: ["Analytics charts with Recharts", "Export CSV reports", "Admin RBAC permissions"],
-      },
-    ],
-    stats: {
-      latency: "<45ms",
+      latency: "<40ms",
       uptime: "99.99%",
-      throughput: "2,500 checkout/min",
+      throughput: "2,000 req/s",
     },
   },
-  "microservice-api": {
-    title: "High-Throughput Microservice API Gateway",
-    prompt: "Distributed REST & GraphQL API Gateway with rate limiting & Redis cache",
-    category: "Cloud Backend",
-    stack: ["Node.js", "Go", "GraphQL", "Redis", "Docker", "Kubernetes"],
+  "velor": {
+    title: "Velor — Developer Workflow & Project Engine",
+    prompt: "Automated project management platform with commit/PR webhooks and task automation",
+    category: "Developer Tooling",
+    stack: ["Next.js 16", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL", "Docker"],
+    timeline: "3 Weeks",
+    architecture: {
+      frontend: "React Server Components with dynamic interactive project pipelines and status indicators.",
+      backend: "Node.js & Next.js Server Actions with GitHub Webhook event listeners.",
+      database: "PostgreSQL on Supabase with Prisma schema migrations.",
+      cloud: "Dockerized microservices deployed on AWS with automated testing.",
+    },
+    phases: [
+      {
+        title: "Engine Schema & Webhook Hooks",
+        description: "Implement Prisma models for GitHub sync and task automation.",
+        tasks: ["GitHub commit webhook controller", "Status transition engine", "Prisma migrations"],
+      },
+      {
+        title: "Pipeline Dashboard UI",
+        description: "Build split view layout with live project status cards and metrics.",
+        tasks: ["OpenRouter-inspired Hero section", "Interactive milestone modal", "Dynamic filters"],
+      },
+      {
+        title: "Deployment & Verification",
+        description: "Zero-downtime release with TypeScript typecheck validation.",
+        tasks: ["Docker build optimization", "Lighthouse audit", "Vercel edge deployment"],
+      },
+    ],
+    stats: {
+      latency: "<30ms",
+      uptime: "99.95%",
+      throughput: "1,500 webhook/min",
+    },
+  },
+  "weavit": {
+    title: "Weavit — Interactive Workspace Canvas",
+    prompt: "Real-time canvas engine with WebSockets, Redux Toolkit & state synchronization",
+    category: "Interactive App",
+    stack: ["React", "TypeScript", "Redux Toolkit", "WebSockets", "Node.js", "Redis"],
     timeline: "2.5 Weeks",
     architecture: {
-      frontend: "GraphQL Playground & Interactive OpenAPI Swagger documentation.",
-      backend: "Golang API Gateway handling rate limiting, JWT authentication & request routing.",
-      database: "Redis cluster for token buckets + MongoDB for unstructured logs.",
-      cloud: "Kubernetes cluster with horizontal pod autoscaling on AWS EKS.",
+      frontend: "High-FPS HTML5 Canvas / WebGL rendering layer with custom event handling.",
+      backend: "Node.js WebSocket server managing room state broadcast.",
+      database: "Redis Pub/Sub channel for multi-node messaging + PostgreSQL persistent storage.",
+      cloud: "Containerized deployment with WebSocket sticky session routing.",
     },
     phases: [
       {
-        title: "API Gateway Core & Token Auth",
-        description: "Build reverse proxy router with distributed rate limiting.",
-        tasks: ["JWT verification middleware", "Redis sliding window rate limiter", "CORS & Security headers"],
+        title: "Canvas Renderer Engine",
+        description: "Build viewport transformation and node manipulation tools.",
+        tasks: ["Transform matrix calculations", "Undo/redo undo stack", "Redux RTK state slice"],
       },
       {
-        title: "GraphQL Subgraph Aggregation",
-        description: "Federated GraphQL schema combining microservices into single endpoint.",
-        tasks: ["Apollo Federation setup", "N+1 query resolution optimization", "Cache control headers"],
+        title: "Real-Time Sync Protocol",
+        description: "WebSocket sync for multi-user position updates.",
+        tasks: ["Socket.io channel handler", "State conflict resolution", "User cursor indicators"],
       },
       {
-        title: "Observability & Metrics",
-        description: "Prometheus metrics export with Grafana dashboards.",
-        tasks: ["Distributed tracing with OpenTelemetry", "Health check probes", "Zero-downtime rolling deploys"],
+        title: "Export & Persistence",
+        description: "Save workspace state to PostgreSQL with PNG/SVG export.",
+        tasks: ["SVG string exporter", "Workspace snapshot API", "Export modal"],
       },
     ],
     stats: {
       latency: "<15ms",
-      uptime: "99.99%",
-      throughput: "10,000 req/s",
+      uptime: "99.9%",
+      throughput: "60 FPS rendering",
     },
   },
-  "realtime-canvas": {
-    title: "Real-Time Collaborative Workspace Canvas",
-    prompt: "Figma-style vector graphics canvas with WebSockets & CRDT state sync",
-    category: "Interactive App",
-    stack: ["React", "HTML5 Canvas / HTML5 WebGL", "WebSockets", "Node.js", "Yjs CRDT"],
-    timeline: "3.5 Weeks",
+  "rag-ml": {
+    title: "AI ML RAG Retrieval & Knowledge Engine",
+    prompt: "FastAPI Python backend with vector context indexing, RAG pipeline & LLM workflows",
+    category: "AI & ML System",
+    stack: ["Python", "FastAPI", "ML RAG", "Redis", "Vector DB", "Docker"],
+    timeline: "3 Weeks",
     architecture: {
-      frontend: "Custom WebGL / Canvas 2D engine with hardware-accelerated rendering.",
-      backend: "Node.js WebSocket server managing CRDT (Conflict-Free Replicated Data Types) room channels.",
-      database: "Redis Pub/Sub for cross-server WebSocket messaging + S3 bucket for asset export.",
-      cloud: "Distributed WebSocket server fleet with sticky sessions on AWS Elastic Beanstalk.",
+      frontend: "Streaming React UI rendering real-time RAG response chunks.",
+      backend: "FastAPI Python async server orchestrating vector embedding & prompt chains.",
+      database: "Vector Database for document chunks + Redis session cache.",
+      cloud: "Dockerized FastAPI image deployed to AWS Cloud.",
     },
     phases: [
       {
-        title: "Infinite Canvas Renderer",
-        description: "High-FPS pan, zoom, and multi-element shape rendering engine.",
-        tasks: ["Viewport transformation matrix", "Spatial indexing (R-Tree) for selection", "Undo/Redo stack"],
+        title: "RAG Pipeline & Embeddings",
+        description: "Build document parser, chunker, and vector embedding generator.",
+        tasks: ["Document chunking strategy", "Vector DB index creation", "Similarity search API"],
       },
       {
-        title: "Real-Time CRDT State Sync",
-        description: "Multi-user cursor sync & simultaneous shape editing without lock contention.",
-        tasks: ["Yjs CRDT integration", "WebSocket reconnection protocol", "Live presence indicators"],
+        title: "FastAPI LLM Orchestration",
+        description: "Implement streaming endpoints with prompt safety guardrails.",
+        tasks: ["AsyncIO FastAPI router", "Context retrieval filter", "Streaming SSE responses"],
       },
       {
-        title: "Asset Export & Collaboration",
-        description: "Export selection to PNG, SVG, JSON with granular invite links.",
-        tasks: ["SVG generator", "Shareable room tokens", "Comment thread pins"],
+        title: "Docker Cloud Release",
+        description: "Containerization and cloud deployment with security checks.",
+        tasks: ["Multi-stage Dockerfile", "API key management", "Performance benchmarking"],
       },
     ],
     stats: {
-      latency: "<10ms",
-      uptime: "99.95%",
-      throughput: "60 FPS rendering",
+      latency: "<110ms",
+      uptime: "99.9%",
+      throughput: "800 req/s",
     },
   },
 }
@@ -190,7 +192,7 @@ export function HeroSection({ onSelectPrompt }: HeroSectionProps) {
         frontend: "Modern Next.js 16 App Router with responsive dark glassmorphic interface.",
         backend: "Type-safe Node.js REST API with input validation & rate limiting.",
         database: "PostgreSQL database schema with indexed queries & migration safety.",
-        cloud: "Containerized Docker setup ready for Vercel, AWS, or Railway deployment.",
+        cloud: "Containerized Docker setup ready for Vercel, AWS, or Cloud deployment.",
       },
       phases: [
         {
@@ -206,7 +208,7 @@ export function HeroSection({ onSelectPrompt }: HeroSectionProps) {
         {
           title: "Testing & Deployment",
           description: "Automated end-to-end testing and production pipeline configuration.",
-          tasks: ["E2E integration test suite", "Lighthouse speed audit", "CI/CD automated release"],
+          tasks: ["E2E integration test suite", "Lighthouse speed audit", "CI/CD release"],
         },
       ],
       stats: {
@@ -224,16 +226,12 @@ export function HeroSection({ onSelectPrompt }: HeroSectionProps) {
     <section id="overview" className="relative pt-32 pb-16 px-4 flex flex-col items-center justify-center">
       <div className="max-w-4xl w-full mx-auto flex flex-col items-center text-center gap-8">
         
-        {/* Developer Profile Avatar Badge (Top center element matching reference layout) */}
-        <div className="relative group cursor-pointer" onClick={() => onSelectPrompt(PRESET_PLANS["ai-agent"])}>
-          <div className="w-20 h-20 rounded-2xl bg-[#121215] border border-[#222228] p-1 shadow-2xl shadow-black badge-glow transition-all duration-300 group-hover:border-zinc-400 group-hover:scale-105 overflow-hidden">
-            <Image
-              src="/avatar.jpg"
-              alt="Alex Chen Developer Avatar"
-              width={80}
-              height={80}
-              className="w-full h-full object-cover rounded-xl"
-            />
+        {/* Developer Profile Badge */}
+        <div className="relative group cursor-pointer" onClick={() => onSelectPrompt(PRESET_PLANS["oasian"])}>
+          <div className="w-20 h-20 rounded-2xl bg-[#121215] border border-[#222228] p-1 shadow-2xl shadow-black badge-glow transition-all duration-300 group-hover:border-amber-400 group-hover:scale-105 overflow-hidden flex items-center justify-center">
+            <div className="w-full h-full rounded-xl bg-gradient-to-br from-amber-500/20 via-zinc-900 to-black flex items-center justify-center border border-amber-500/30">
+              <span className="text-2xl font-black text-amber-400 tracking-tighter">RS</span>
+            </div>
           </div>
           {/* Status Dot */}
           <div className="absolute -bottom-1 -right-1 flex items-center justify-center">
@@ -244,81 +242,80 @@ export function HeroSection({ onSelectPrompt }: HeroSectionProps) {
           </div>
         </div>
 
-        {/* Main Developer Headline & Name */}
+        {/* Main Headline & Identity */}
         <div className="space-y-4 max-w-2xl">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-xs font-mono text-amber-400">
-            <Sparkles className="w-3.5 h-3.5" /> Full-Stack & AI Systems Architect
+            <Sparkles className="w-3.5 h-3.5" /> Full-Stack & AI Systems Engineer
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight leading-tight">
-            Hi! I&apos;m Alex Chen — Software Engineer & Architect
+            Hi! I&apos;m Raman Singh — Software Engineer & Builder
           </h1>
 
-          {/* Bio / About Subtitle */}
+          {/* Bio / Summary */}
           <p className="text-zinc-400 text-sm sm:text-base leading-relaxed font-normal max-w-xl mx-auto">
-            Building high-throughput web applications, autonomous LLM agents, scalable backend microservices, and interactive developer tooling with production rigor.
+            Building high-performance MERN & Next.js web applications, ML/RAG retrieval systems, and solving complex algorithmic challenges. 2+ years building 6+ production projects with 1000+ LeetCode solved (1912 CP rating).
           </p>
         </div>
 
-        {/* Developer Quick Social Links & Resume Pill Row */}
+        {/* Quick Social & Contact Links Row */}
         <div className="flex flex-wrap items-center justify-center gap-3">
           <a
-            href="https://github.com"
+            href="https://ramansingh.me"
+            target="_blank"
+            rel="noreferrer"
+            className="px-3.5 py-1.5 rounded-full bg-[#121216] hover:bg-[#1c1c24] border border-[#22222a] hover:border-amber-400 text-xs text-zinc-300 font-medium transition flex items-center gap-2 group shadow-sm"
+          >
+            <Globe className="w-4 h-4 text-amber-400 group-hover:text-amber-300 transition" />
+            <span>ramansingh.me</span>
+          </a>
+
+          <a
+            href="https://github.com/Raman-Khiva"
             target="_blank"
             rel="noreferrer"
             className="px-3.5 py-1.5 rounded-full bg-[#121216] hover:bg-[#1c1c24] border border-[#22222a] hover:border-zinc-500 text-xs text-zinc-300 font-medium transition flex items-center gap-2 group shadow-sm"
           >
             <GithubIcon className="w-4 h-4 text-zinc-400 group-hover:text-white transition" />
-            <span>GitHub</span>
+            <span>GitHub (Raman Khiva)</span>
           </a>
 
           <a
-            href="https://linkedin.com"
+            href="https://leetcode.com/u/Raman_Khiva/"
             target="_blank"
             rel="noreferrer"
-            className="px-3.5 py-1.5 rounded-full bg-[#121216] hover:bg-[#1c1c24] border border-[#22222a] hover:border-zinc-500 text-xs text-zinc-300 font-medium transition flex items-center gap-2 group shadow-sm"
+            className="px-3.5 py-1.5 rounded-full bg-[#121216] hover:bg-[#1c1c24] border border-[#22222a] hover:border-amber-400 text-xs text-zinc-300 font-medium transition flex items-center gap-2 group shadow-sm"
+          >
+            <LeetCodeIcon className="w-4 h-4 text-amber-500 group-hover:text-amber-400 transition" />
+            <span>LeetCode (1912 Rating)</span>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/ramandeep-singh-503077200/"
+            target="_blank"
+            rel="noreferrer"
+            className="px-3.5 py-1.5 rounded-full bg-[#121216] hover:bg-[#1c1c24] border border-[#22222a] hover:border-cyan-400 text-xs text-zinc-300 font-medium transition flex items-center gap-2 group shadow-sm"
           >
             <LinkedinIcon className="w-4 h-4 text-zinc-400 group-hover:text-cyan-400 transition" />
             <span>LinkedIn</span>
           </a>
 
           <a
-            href="https://twitter.com"
-            target="_blank"
-            rel="noreferrer"
-            className="px-3.5 py-1.5 rounded-full bg-[#121216] hover:bg-[#1c1c24] border border-[#22222a] hover:border-zinc-500 text-xs text-zinc-300 font-medium transition flex items-center gap-2 group shadow-sm"
-          >
-            <TwitterIcon className="w-4 h-4 text-zinc-400 group-hover:text-amber-400 transition" />
-            <span>Twitter/X</span>
-          </a>
-
-          <a
             href="#contact"
-            className="px-3.5 py-1.5 rounded-full bg-[#121216] hover:bg-[#1c1c24] border border-[#22222a] hover:border-zinc-500 text-xs text-zinc-300 font-medium transition flex items-center gap-2 group shadow-sm"
+            className="px-3.5 py-1.5 rounded-full bg-[#121216] hover:bg-[#1c1c24] border border-[#22222a] hover:border-emerald-400 text-xs text-zinc-300 font-medium transition flex items-center gap-2 group shadow-sm"
           >
             <Mail className="w-4 h-4 text-zinc-400 group-hover:text-emerald-400 transition" />
             <span>Contact</span>
           </a>
-
-          <a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault()
-              alert("Resume PDF Download requested!")
-            }}
-            className="px-3.5 py-1.5 rounded-full bg-white hover:bg-zinc-200 text-black text-xs font-semibold transition flex items-center gap-1.5 shadow"
-          >
-            <FileText className="w-3.5 h-3.5" /> Resume CV
-          </a>
         </div>
 
-        {/* 4 Tech & Capability Cards Grid (With Tech Stack Icons & Tool Names) */}
+        {/* 4 Tech & Capability Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full mt-2">
           
-          {/* Card 1: Frontend Tech */}
+          {/* Card 1: MERN & Next.js */}
           <div
-            onClick={() => onSelectPrompt(PRESET_PLANS["ecommerce-saas"])}
-            className="group p-5 rounded-2xl bg-[#131316] hover:bg-[#18181d] border border-[#222228] hover:border-zinc-600 transition-all duration-300 cursor-pointer text-left flex flex-col gap-3 card-glow"
+            onClick={() => onSelectPrompt(PRESET_PLANS["oasian"])}
+            className="group p-5 rounded-2xl bg-[#131316] hover:bg-[#18181d] border border-[#222228] hover:border-amber-500/50 transition-all duration-300 cursor-pointer text-left flex flex-col gap-3 card-glow"
           >
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-xl bg-[#1c1c21] border border-[#2a2a32] flex items-center justify-center text-amber-400">
@@ -330,10 +327,10 @@ export function HeroSection({ onSelectPrompt }: HeroSectionProps) {
             </div>
             <div>
               <h3 className="text-sm font-semibold text-white tracking-tight mb-1 flex items-center gap-1.5">
-                Frontend Engineering
+                Full-Stack & MERN Engine
               </h3>
               <p className="text-xs text-zinc-400 leading-relaxed">
-                Next.js 16, React 19, TypeScript & Tailwind CSS — sub-second rendering & SSR
+                MERN Stack, Next.js 16, TypeScript, Redux & RTK — reactive, sub-second web applications.
               </p>
             </div>
             <div className="flex flex-wrap gap-1 mt-auto pt-1">
@@ -341,15 +338,15 @@ export function HeroSection({ onSelectPrompt }: HeroSectionProps) {
                 Next.js 16
               </span>
               <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1c1c24] border border-[#2a2a35] text-zinc-300">
-                React 19
+                Redux / RTK
               </span>
             </div>
           </div>
 
-          {/* Card 2: Backend Tech */}
+          {/* Card 2: Backend, DBs & Cloud */}
           <div
-            onClick={() => onSelectPrompt(PRESET_PLANS["microservice-api"])}
-            className="group p-5 rounded-2xl bg-[#131316] hover:bg-[#18181d] border border-[#222228] hover:border-zinc-600 transition-all duration-300 cursor-pointer text-left flex flex-col gap-3 card-glow"
+            onClick={() => onSelectPrompt(PRESET_PLANS["velor"])}
+            className="group p-5 rounded-2xl bg-[#131316] hover:bg-[#18181d] border border-[#222228] hover:border-cyan-500/50 transition-all duration-300 cursor-pointer text-left flex flex-col gap-3 card-glow"
           >
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-xl bg-[#1c1c21] border border-[#2a2a32] flex items-center justify-center text-emerald-400">
@@ -361,94 +358,94 @@ export function HeroSection({ onSelectPrompt }: HeroSectionProps) {
             </div>
             <div>
               <h3 className="text-sm font-semibold text-white tracking-tight mb-1">
-                Backend & Systems
+                Backend, DBs & Cloud
               </h3>
               <p className="text-xs text-zinc-400 leading-relaxed">
-                Node.js, Golang, GraphQL & PostgreSQL — high-concurrency microservices & APIs
+                Node.js, PostgreSQL, Prisma, Redis, AWS & Docker — high-concurrency microservices.
               </p>
             </div>
             <div className="flex flex-wrap gap-1 mt-auto pt-1">
               <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1c1c24] border border-[#2a2a35] text-zinc-300">
-                Node.js
+                PostgreSQL
               </span>
               <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1c1c24] border border-[#2a2a35] text-zinc-300">
-                PostgreSQL
+                Docker & AWS
               </span>
             </div>
           </div>
 
-          {/* Card 3: AI & Agentic Systems Tech */}
+          {/* Card 3: C++, OOPs & CP */}
           <div
-            onClick={() => onSelectPrompt(PRESET_PLANS["ai-agent"])}
-            className="group p-5 rounded-2xl bg-[#131316] hover:bg-[#18181d] border border-[#222228] hover:border-zinc-600 transition-all duration-300 cursor-pointer text-left flex flex-col gap-3 card-glow"
+            onClick={() => onSelectPrompt(PRESET_PLANS["weavit"])}
+            className="group p-5 rounded-2xl bg-[#131316] hover:bg-[#18181d] border border-[#222228] hover:border-purple-500/50 transition-all duration-300 cursor-pointer text-left flex flex-col gap-3 card-glow"
+          >
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-xl bg-[#1c1c21] border border-[#2a2a32] flex items-center justify-center text-cyan-400">
+                <CppIcon className="w-4 h-4" />
+              </div>
+              <div className="w-8 h-8 rounded-xl bg-[#1c1c21] border border-[#2a2a32] flex items-center justify-center text-amber-400">
+                <LeetCodeIcon className="w-4 h-4" />
+              </div>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-white tracking-tight mb-1">
+                C++, OOPs & Competitive Prog.
+              </h3>
+              <p className="text-xs text-zinc-400 leading-relaxed">
+                C++, Object-Oriented Design, Data Structures & Algorithms — 1000+ LeetCode (1912 Rating).
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-1 mt-auto pt-1">
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1c1c24] border border-[#2a2a35] text-zinc-300">
+                1000+ LeetCode
+              </span>
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1c1c24] border border-[#2a2a35] text-amber-400 font-bold">
+                1912 Rating
+              </span>
+            </div>
+          </div>
+
+          {/* Card 4: AI ML & RAG Systems */}
+          <div
+            onClick={() => onSelectPrompt(PRESET_PLANS["rag-ml"])}
+            className="group p-5 rounded-2xl bg-[#131316] hover:bg-[#18181d] border border-[#222228] hover:border-emerald-500/50 transition-all duration-300 cursor-pointer text-left flex flex-col gap-3 card-glow"
           >
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-xl bg-[#1c1c21] border border-[#2a2a32] flex items-center justify-center text-amber-400">
                 <PythonIcon className="w-4 h-4" />
               </div>
-              <div className="w-8 h-8 rounded-xl bg-[#1c1c21] border border-[#2a2a32] flex items-center justify-center text-purple-400">
+              <div className="w-8 h-8 rounded-xl bg-[#1c1c21] border border-[#2a2a32] flex items-center justify-center text-emerald-400">
                 <Sparkles className="w-4 h-4" />
               </div>
             </div>
             <div>
               <h3 className="text-sm font-semibold text-white tracking-tight mb-1">
-                AI & Agentic Systems
+                AI / ML & RAG Pipelines
               </h3>
               <p className="text-xs text-zinc-400 leading-relaxed">
-                Python, LangChain, RAG Pipelines & Vector DBs — autonomous LLM execution loops
+                Python, FastAPI, RAG building & Vector DBs — context retrieval & autonomous workflows.
               </p>
             </div>
             <div className="flex flex-wrap gap-1 mt-auto pt-1">
               <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1c1c24] border border-[#2a2a35] text-zinc-300">
-                Python
+                FastAPI
               </span>
               <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1c1c24] border border-[#2a2a35] text-zinc-300">
-                LangChain
-              </span>
-            </div>
-          </div>
-
-          {/* Card 4: DevOps & Cloud */}
-          <div
-            onClick={() => onSelectPrompt(PRESET_PLANS["realtime-canvas"])}
-            className="group p-5 rounded-2xl bg-[#131316] hover:bg-[#18181d] border border-[#222228] hover:border-zinc-600 transition-all duration-300 cursor-pointer text-left flex flex-col gap-3 card-glow"
-          >
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-xl bg-[#1c1c21] border border-[#2a2a32] flex items-center justify-center text-cyan-400">
-                <DockerIcon className="w-4 h-4" />
-              </div>
-              <div className="w-8 h-8 rounded-xl bg-[#1c1c21] border border-[#2a2a32] flex items-center justify-center text-emerald-400">
-                <Zap className="w-4 h-4" />
-              </div>
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold text-white tracking-tight mb-1">
-                DevOps & Infrastructure
-              </h3>
-              <p className="text-xs text-zinc-400 leading-relaxed">
-                Docker, Kubernetes, AWS & CI/CD — 99.99% uptime SLA & automated releases
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-1 mt-auto pt-1">
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1c1c24] border border-[#2a2a35] text-zinc-300">
-                Docker
-              </span>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#1c1c24] border border-[#2a2a35] text-zinc-300">
-                AWS
+                ML (RAG)
               </span>
             </div>
           </div>
         </div>
 
-        {/* Developer Stats Banner (Horizontally divided wide card) */}
+        {/* Developer Stats Banner */}
         <div className="w-full max-w-3xl bg-[#121215] border border-[#222228] rounded-2xl py-4 px-6 shadow-xl grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-[#222228] mt-2">
           {/* Stat 1 */}
           <div className="flex flex-col items-center justify-center py-2 md:py-0 px-2 text-center">
             <div className="flex items-center gap-1.5 text-zinc-400 text-xs font-medium mb-1">
               <Briefcase className="w-3.5 h-3.5 text-amber-400" />
             </div>
-            <div className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">8+ Years</div>
-            <div className="text-[11px] text-zinc-400 font-normal">Full-Stack Experience</div>
+            <div className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">2+ Years</div>
+            <div className="text-[11px] text-zinc-400 font-normal">Building Software</div>
           </div>
 
           {/* Stat 2 */}
@@ -456,26 +453,26 @@ export function HeroSection({ onSelectPrompt }: HeroSectionProps) {
             <div className="flex items-center gap-1.5 text-zinc-400 text-xs font-medium mb-1">
               <Layers className="w-3.5 h-3.5 text-cyan-400" />
             </div>
-            <div className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">35+ Apps</div>
-            <div className="text-[11px] text-zinc-400 font-normal">Shipped to Production</div>
+            <div className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">6+ Projects</div>
+            <div className="text-[11px] text-zinc-400 font-normal">Built & Shipped</div>
           </div>
 
           {/* Stat 3 */}
           <div className="flex flex-col items-center justify-center py-2 md:py-0 px-2 text-center">
             <div className="flex items-center gap-1.5 text-zinc-400 text-xs font-medium mb-1">
-              <GitCommit className="w-3.5 h-3.5 text-purple-400" />
+              <Trophy className="w-3.5 h-3.5 text-amber-400" />
             </div>
-            <div className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">50+ Repos</div>
-            <div className="text-[11px] text-zinc-400 font-normal">Open Source Contributions</div>
+            <div className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">1000+</div>
+            <div className="text-[11px] text-zinc-400 font-normal">LeetCode Solved</div>
           </div>
 
           {/* Stat 4 */}
           <div className="flex flex-col items-center justify-center py-2 md:py-0 px-2 text-center">
             <div className="flex items-center gap-1.5 text-zinc-400 text-xs font-medium mb-1">
-              <Zap className="w-3.5 h-3.5 text-emerald-400" />
+              <Zap className="w-3.5 h-3.5 text-purple-400" />
             </div>
-            <div className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">99.99%</div>
-            <div className="text-[11px] text-zinc-400 font-normal">Target Uptime SLA</div>
+            <div className="text-xl sm:text-2xl font-extrabold text-amber-400 tracking-tight">1912</div>
+            <div className="text-[11px] text-zinc-400 font-normal">LeetCode CP Max Rating</div>
           </div>
         </div>
 
@@ -489,8 +486,8 @@ export function HeroSection({ onSelectPrompt }: HeroSectionProps) {
               type="text"
               value={customPrompt}
               onChange={(e) => setCustomPrompt(e.target.value)}
-              placeholder="Ask Alex to plan a custom system (e.g. Next.js SaaS with Stripe)..."
-              className="w-full py-3.5 pl-11 pr-28 rounded-2xl bg-[#131317] border border-[#262630] focus:border-zinc-500 focus:outline-none text-xs sm:text-sm text-white placeholder-zinc-500 transition shadow-inner"
+              placeholder="Ask Raman to plan a system (e.g., MERN SaaS with Redis)..."
+              className="w-full py-3.5 pl-11 pr-28 rounded-2xl bg-[#131317] border border-[#262630] focus:border-amber-500/50 focus:outline-none text-xs sm:text-sm text-white placeholder-zinc-500 transition shadow-inner"
             />
             <button
               type="submit"
@@ -504,44 +501,40 @@ export function HeroSection({ onSelectPrompt }: HeroSectionProps) {
         {/* Quick Example Architecture Actions Pills */}
         <div className="flex flex-col items-center gap-3 mt-2 w-full">
           <div className="text-xs text-zinc-400 font-normal tracking-wide">
-            Inspect interactive architectural plans
+            Inspect Raman&apos;s featured project architecture plans
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-2 max-w-3xl">
-            {/* Pill 1 */}
             <button
-              onClick={() => onSelectPrompt(PRESET_PLANS["ai-agent"])}
-              className="px-3.5 py-1.5 rounded-full bg-[#121216] hover:bg-[#1c1c24] border border-[#22222a] hover:border-zinc-500 text-xs text-zinc-300 font-normal transition flex items-center gap-1.5 group cursor-pointer"
+              onClick={() => onSelectPrompt(PRESET_PLANS["oasian"])}
+              className="px-3.5 py-1.5 rounded-full bg-[#121216] hover:bg-[#1c1c24] border border-[#22222a] hover:border-amber-400 text-xs text-zinc-300 font-normal transition flex items-center gap-1.5 group cursor-pointer"
             >
-              <ChevronRight className="w-3.5 h-3.5 text-zinc-400 group-hover:text-white transition" />
-              <span>Inspect AI Autonomous Agent Plan</span>
+              <ChevronRight className="w-3.5 h-3.5 text-zinc-400 group-hover:text-amber-400 transition" />
+              <span>Oasian (Startup Platform Plan)</span>
             </button>
 
-            {/* Pill 2 */}
             <button
-              onClick={() => onSelectPrompt(PRESET_PLANS["ecommerce-saas"])}
-              className="px-3.5 py-1.5 rounded-full bg-[#121216] hover:bg-[#1c1c24] border border-[#22222a] hover:border-zinc-500 text-xs text-zinc-300 font-normal transition flex items-center gap-1.5 group cursor-pointer"
+              onClick={() => onSelectPrompt(PRESET_PLANS["velor"])}
+              className="px-3.5 py-1.5 rounded-full bg-[#121216] hover:bg-[#1c1c24] border border-[#22222a] hover:border-cyan-400 text-xs text-zinc-300 font-normal transition flex items-center gap-1.5 group cursor-pointer"
             >
-              <ChevronRight className="w-3.5 h-3.5 text-zinc-400 group-hover:text-white transition" />
-              <span>Explore Full-Stack Next.js 16 SaaS Store</span>
+              <ChevronRight className="w-3.5 h-3.5 text-zinc-400 group-hover:text-cyan-400 transition" />
+              <span>Velor (Workflow Engine Plan)</span>
             </button>
 
-            {/* Pill 3 */}
             <button
-              onClick={() => onSelectPrompt(PRESET_PLANS["microservice-api"])}
-              className="px-3.5 py-1.5 rounded-full bg-[#121216] hover:bg-[#1c1c24] border border-[#22222a] hover:border-zinc-500 text-xs text-zinc-300 font-normal transition flex items-center gap-1.5 group cursor-pointer"
+              onClick={() => onSelectPrompt(PRESET_PLANS["weavit"])}
+              className="px-3.5 py-1.5 rounded-full bg-[#121216] hover:bg-[#1c1c24] border border-[#22222a] hover:border-purple-400 text-xs text-zinc-300 font-normal transition flex items-center gap-1.5 group cursor-pointer"
             >
-              <ChevronRight className="w-3.5 h-3.5 text-zinc-400 group-hover:text-white transition" />
-              <span>Inspect Microservices API Gateway</span>
+              <ChevronRight className="w-3.5 h-3.5 text-zinc-400 group-hover:text-purple-400 transition" />
+              <span>Weavit (Interactive Canvas Plan)</span>
             </button>
 
-            {/* Pill 4 */}
             <button
-              onClick={() => onSelectPrompt(PRESET_PLANS["realtime-canvas"])}
-              className="px-3.5 py-1.5 rounded-full bg-[#121216] hover:bg-[#1c1c24] border border-[#22222a] hover:border-zinc-500 text-xs text-zinc-300 font-normal transition flex items-center gap-1.5 group cursor-pointer"
+              onClick={() => onSelectPrompt(PRESET_PLANS["rag-ml"])}
+              className="px-3.5 py-1.5 rounded-full bg-[#121216] hover:bg-[#1c1c24] border border-[#22222a] hover:border-emerald-400 text-xs text-zinc-300 font-normal transition flex items-center gap-1.5 group cursor-pointer"
             >
-              <ChevronRight className="w-3.5 h-3.5 text-zinc-400 group-hover:text-white transition" />
-              <span>View Real-Time Collaborative Canvas Plan</span>
+              <ChevronRight className="w-3.5 h-3.5 text-zinc-400 group-hover:text-emerald-400 transition" />
+              <span>AI ML RAG Pipeline Plan</span>
             </button>
           </div>
         </div>

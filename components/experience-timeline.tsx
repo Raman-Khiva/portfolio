@@ -16,41 +16,42 @@ interface Milestone {
 const MILESTONES: Milestone[] = [
   {
     period: "2024 — Present",
-    role: "Lead Full-Stack & AI Systems Architect",
-    company: "Apex Neural Labs",
-    location: "San Francisco, CA (Remote)",
-    description: "Architecting autonomous AI agent platforms, streaming RAG infrastructure, and high-concurrency microservices processing 50M+ daily events.",
+    role: "Full-Stack & AI Systems Engineer",
+    company: "Oasian & Independent Systems",
+    location: "Remote",
+    description: "Built Oasian full-stack startup application alongside AI ML RAG retrieval engines, high-concurrency Node.js APIs, and Next.js 16 platforms.",
     highlights: [
-      "Designed real-time streaming Next.js 16 App Router dashboard with sub-50ms TTFB",
-      "Built custom LangChain + FastAPI agent orchestration engine scaling to 500 req/sec",
-      "Reduced infrastructure cloud costs by 40% via Docker container optimization",
+      "Engineered Oasian startup full-stack web application with MERN stack & Next.js 16 App Router",
+      "Developed Python FastAPI RAG retrieval pipeline with Redis caching & vector search",
+      "Achieved sub-40ms response latency across production backend services",
     ],
-    tags: ["Next.js 16", "Python", "FastAPI", "Pinecone", "AWS ECS", "Docker"],
+    tags: ["MERN", "Next.js 16", "Python", "FastAPI", "ML RAG", "Redis", "Postgres"],
   },
   {
-    period: "2022 — 2024",
-    role: "Senior Full-Stack Engineer",
-    company: "Velor Cloud Systems",
-    location: "New York, NY",
-    description: "Led core frontend and backend engineering for enterprise multi-tenant SaaS products and payment checkout gateways.",
+    period: "2023 — 2024",
+    role: "Full-Stack Engineer & Product Builder",
+    company: "Velor Engine & Weavit Canvas",
+    location: "Remote",
+    description: "Built Velor automated developer project management platform and Weavit real-time collaborative workspace canvas.",
     highlights: [
-      "Engineered multi-tenant database routing logic handling $10M+ annual GMV",
-      "Achieved 99.99% system uptime SLA across distributed microservices",
-      "Mentored team of 6 engineers on TypeScript strict safety and design system standards",
+      "Engineered Velor project management engine with Prisma ORM and GitHub commit webhook synchronization",
+      "Created Weavit real-time interactive workspace canvas using React, Redux Toolkit & WebSockets",
+      "Shipped 6+ full-stack production projects over 2+ years of active development",
     ],
-    tags: ["React", "TypeScript", "Node.js", "PostgreSQL", "Prisma", "Stripe"],
+    tags: ["Next.js", "React", "Redux/RTK", "Prisma", "PostgreSQL", "Docker", "WebSockets"],
   },
   {
-    period: "2020 — 2022",
-    role: "Software Engineer",
-    company: "Nexus Interactive",
-    location: "Austin, TX",
-    description: "Developed real-time collaborative web applications, WebSockets state synchronization, and high-performance WebGL graphics engines.",
+    period: "2+ Years Active",
+    role: "Competitive Programmer & Algorithmic Problem Solver",
+    company: "LeetCode & Codeforces",
+    location: "Global Platforms",
+    description: "Solved 1000+ data structures & algorithm problems in C++ with OOP principles and achieved a peak rating of 1912 on LeetCode.",
     highlights: [
-      "Built real-time canvas renderer using WebGL and Yjs CRDT protocol",
-      "Implemented automated CI/CD deployment pipelines with zero-downtime releases",
+      "Solved 1000+ algorithm challenges across Dynamic Programming, Graphs, Trees, and System Design",
+      "Achieved peak Competitive Programming rating of 1912 on LeetCode (Raman_Khiva)",
+      "Mastered C++, OOP principles, memory management, and time/space complexity optimization",
     ],
-    tags: ["React", "WebGL", "WebSockets", "Redis", "Docker"],
+    tags: ["C++", "OOPs", "1000+ LeetCode", "1912 Max CP Rating", "Data Structures", "Algorithms"],
   },
 ]
 
@@ -59,13 +60,13 @@ export function ExperienceTimeline() {
     <section id="experience" className="py-20 px-4 max-w-5xl mx-auto w-full">
       <div className="text-center max-w-xl mx-auto mb-12">
         <span className="text-xs font-mono text-amber-400 uppercase tracking-widest flex items-center justify-center gap-1.5">
-          <GitCommit className="w-4 h-4" /> Milestone History
+          <GitCommit className="w-4 h-4" /> Track Record & Milestones
         </span>
         <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mt-2">
-          Experience & Track Record
+          Experience & Key Achievements
         </h2>
         <p className="text-xs sm:text-sm text-zinc-400 mt-2">
-          A proven history of building scalable products, leading technical strategy, and delivering value.
+          A proven history of building scalable web apps, AI pipelines, and solving complex algorithmic challenges.
         </p>
       </div>
 

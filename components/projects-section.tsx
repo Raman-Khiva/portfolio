@@ -12,11 +12,10 @@ import {
   PostgresIcon,
   TypeScriptIcon,
   TailwindIcon,
-  StripeIcon,
-  GraphQLIcon,
   RedisIcon,
-  KubernetesIcon,
   WebSocketsIcon,
+  LeetCodeIcon,
+  CppIcon,
 } from "@/components/icons"
 import { ProjectPlanData } from "./project-plan-modal"
 import { PRESET_PLANS } from "./hero-section"
@@ -29,7 +28,7 @@ interface ProjectItem {
   id: string
   title: string
   description: string
-  category: "AI/LLM" | "Full-Stack" | "APIs & Cloud" | "Open Source"
+  category: "AI/ML" | "Full-Stack" | "Interactive App" | "Cloud Systems"
   tags: string[]
   metrics: string
   demoUrl?: string
@@ -39,48 +38,48 @@ interface ProjectItem {
 
 const PROJECTS_LIST: ProjectItem[] = [
   {
-    id: "project-1",
-    title: "Agentic Workspace & Autonomous Executor",
-    description: "An AI-powered development orchestration platform that analyzes repository structures, generates tasks, and executes code updates with automated tests.",
-    category: "AI/LLM",
-    tags: ["Next.js 16", "Python", "FastAPI", "Pinecone", "Docker"],
-    metrics: "98% Task Accuracy • <120ms Latency",
-    githubUrl: "https://github.com",
-    demoUrl: "https://demo.example.com",
-    presetKey: "ai-agent",
-  },
-  {
-    id: "project-2",
-    title: "Multi-Tenant Enterprise SaaS Store",
-    description: "Sub-second e-commerce engine supporting instant multi-currency checkouts, inventory webhooks, and live merchant analytics dashboards.",
+    id: "project-oasian",
+    title: "Oasian — Startup Full-Stack Platform",
+    description: "High-scale full-stack platform built for a startup. Engineered using MERN stack, Next.js 16, Redux Toolkit, Redis caching, and PostgreSQL schema indexing.",
     category: "Full-Stack",
-    tags: ["Next.js 16", "TypeScript", "Tailwind CSS", "Prisma", "Stripe"],
-    metrics: "2,500 Checkouts/min • ISR Caching",
-    githubUrl: "https://github.com",
-    demoUrl: "https://demo.example.com",
-    presetKey: "ecommerce-saas",
+    tags: ["MERN", "Next.js 16", "TypeScript", "Redux", "Redis", "Postgres"],
+    metrics: "2+ Years • Sub-40ms Response Time",
+    githubUrl: "https://github.com/Raman-Khiva",
+    demoUrl: "https://oasian.in",
+    presetKey: "oasian",
   },
   {
-    id: "project-3",
-    title: "Distributed Microservices API Gateway",
-    description: "High-throughput API Gateway running JWT authentication, sliding-window rate limiting, and federated GraphQL schema stitching.",
-    category: "APIs & Cloud",
-    tags: ["Node.js", "GraphQL", "Redis", "Docker", "Kubernetes"],
-    metrics: "10,000 req/s • <15ms Latency",
-    githubUrl: "https://github.com",
-    demoUrl: "https://demo.example.com",
-    presetKey: "microservice-api",
-  },
-  {
-    id: "project-4",
-    title: "Real-Time Collaborative Graphic Canvas",
-    description: "Multi-user vector graphics design tool built with HTML5 WebGL canvas engine and Yjs CRDT real-time document synchronization.",
+    id: "project-velor",
+    title: "Velor — Developer Project & Workflow Engine",
+    description: "Automated developer project management platform evolution. Built with Next.js 16, Prisma ORM, GitHub commit webhooks, and live project status cards.",
     category: "Full-Stack",
-    tags: ["React", "WebGL", "WebSockets", "Node.js", "Yjs CRDT"],
-    metrics: "60 FPS Render • <10ms Sync",
-    githubUrl: "https://github.com",
-    demoUrl: "https://demo.example.com",
-    presetKey: "realtime-canvas",
+    tags: ["Next.js 16", "TypeScript", "Prisma", "Postgres", "Docker"],
+    metrics: "Automated Sync • 99.95% Target SLA",
+    githubUrl: "https://github.com/Raman-Khiva",
+    demoUrl: "https://velor-web-rho.vercel.app/",
+    presetKey: "velor",
+  },
+  {
+    id: "project-weavit",
+    title: "Weavit — Interactive Workspace Canvas",
+    description: "Interactive canvas workflow application built with React, Redux Toolkit, WebSockets state synchronization, and custom UI primitives.",
+    category: "Interactive App",
+    tags: ["React", "Redux", "WebSockets", "Node.js", "Redis"],
+    metrics: "60 FPS Canvas • Sub-15ms Latency",
+    githubUrl: "https://github.com/Raman-Khiva",
+    demoUrl: "https://weavit.tech",
+    presetKey: "weavit",
+  },
+  {
+    id: "project-rag-ml",
+    title: "AI ML RAG Knowledge Engine",
+    description: "Retrieval-Augmented Generation pipeline built with Python, FastAPI async routes, vector context embeddings, and streaming LLM responses.",
+    category: "AI/ML",
+    tags: ["Python", "FastAPI", "ML RAG", "Redis", "Docker"],
+    metrics: "Semantic Context • <110ms Stream",
+    githubUrl: "https://github.com/Raman-Khiva",
+    demoUrl: "https://ramansingh.me",
+    presetKey: "rag-ml",
   },
 ]
 
@@ -92,7 +91,7 @@ function renderTechBadge(tag: string, idx: number) {
   if (tagLower.includes("next")) {
     IconComp = NextIcon
     iconColor = "text-white"
-  } else if (tagLower.includes("react")) {
+  } else if (tagLower.includes("react") || tagLower.includes("mern")) {
     IconComp = ReactIcon
     iconColor = "text-amber-400"
   } else if (tagLower.includes("python")) {
@@ -113,27 +112,21 @@ function renderTechBadge(tag: string, idx: number) {
   } else if (tagLower.includes("tailwind")) {
     IconComp = TailwindIcon
     iconColor = "text-cyan-400"
-  } else if (tagLower.includes("stripe")) {
-    IconComp = StripeIcon
-    iconColor = "text-purple-400"
-  } else if (tagLower.includes("graphql")) {
-    IconComp = GraphQLIcon
-    iconColor = "text-pink-400"
   } else if (tagLower.includes("redis")) {
     IconComp = RedisIcon
     iconColor = "text-red-400"
-  } else if (tagLower.includes("kubernetes")) {
-    IconComp = KubernetesIcon
-    iconColor = "text-cyan-400"
   } else if (tagLower.includes("websocket")) {
     IconComp = WebSocketsIcon
     iconColor = "text-emerald-400"
-  } else if (tagLower.includes("fastapi")) {
+  } else if (tagLower.includes("fastapi") || tagLower.includes("rag") || tagLower.includes("ml")) {
     IconComp = Cpu
     iconColor = "text-emerald-400"
-  } else if (tagLower.includes("pinecone")) {
-    IconComp = Sparkles
-    iconColor = "text-purple-400"
+  } else if (tagLower.includes("c++") || tagLower.includes("cpp")) {
+    IconComp = CppIcon
+    iconColor = "text-cyan-400"
+  } else if (tagLower.includes("leetcode")) {
+    IconComp = LeetCodeIcon
+    iconColor = "text-amber-400"
   }
 
   return (
@@ -160,19 +153,19 @@ export function ProjectsSection({ onInspectPlan }: ProjectsSectionProps) {
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
         <div>
           <div className="flex items-center gap-2 text-xs font-mono text-amber-400 uppercase tracking-widest mb-2">
-            <Sparkles className="w-4 h-4" /> Production Portfolio
+            <Sparkles className="w-4 h-4" /> Top Projects Showcase
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-            Featured Systems & Deployments
+            Featured Systems & Applications
           </h2>
           <p className="text-xs sm:text-sm text-zinc-400 mt-1 max-w-lg">
-            High-performance applications built with modern architectural standards and full-stack rigor.
+            Production-grade systems built by Raman Singh — spanning full-stack startups, developer tools, and AI RAG pipelines.
           </p>
         </div>
 
         {/* Filter Pills */}
         <div className="flex flex-wrap gap-2">
-          {["All", "AI/LLM", "Full-Stack", "APIs & Cloud"].map((cat) => (
+          {["All", "Full-Stack", "Interactive App", "AI/ML"].map((cat) => (
             <button
               key={cat}
               onClick={() => setFilter(cat)}
@@ -222,7 +215,7 @@ export function ProjectsSection({ onInspectPlan }: ProjectsSectionProps) {
 
             {/* Action Bar */}
             <div className="pt-4 border-t border-[#1c1c24] flex items-center justify-between">
-              {project.presetKey && (
+              {project.presetKey && PRESET_PLANS[project.presetKey] && (
                 <button
                   onClick={() => onInspectPlan(PRESET_PLANS[project.presetKey!])}
                   className="text-xs text-amber-400 hover:text-amber-300 font-medium flex items-center gap-1 transition"

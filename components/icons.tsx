@@ -168,3 +168,20 @@ export function WebSocketsIcon(props: React.SVGProps<SVGSVGElement>) {
     </svg>
   )
 }
+
+export function LeetCodeIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...props} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.17 5.79a1.374 1.374 0 0 0-.416.942l-.002.043a1.374 1.374 0 0 0 .418.941l4.98 4.98a1.374 1.374 0 0 0 1.943 0l1.246-1.246a1.374 1.374 0 0 0 0-1.943L12.562 6.73l2.777-2.778a1.374 1.374 0 0 0 0-1.943l-1.246-1.246A1.37 1.37 0 0 0 13.483 0zM5.38 7.353a1.374 1.374 0 0 0-.97.404L.405 11.762a1.374 1.374 0 0 0 0 1.943l9.905 9.905a1.374 1.374 0 0 0 1.943 0l6.23-6.23a1.374 1.374 0 0 0 0-1.943l-1.246-1.246a1.374 1.374 0 0 0-1.943 0l-5.01 5.01-7.96-7.96 2.78-2.78a1.374 1.374 0 0 0 .235-1.103z" />
+    </svg>
+  )
+}
+
+export function CppIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...props} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M22.38 10.42v3.16h-1.58v1.58h-3.16v-1.58h-1.58v-3.16h1.58V8.84h3.16v1.58h1.58zm-7.9 0v3.16h-1.58v1.58H9.74v-1.58H8.16v-3.16h1.58V8.84h3.16v1.58h1.58zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
+    </svg>
+  )
+}
+

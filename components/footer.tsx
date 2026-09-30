@@ -19,13 +19,13 @@ export function Footer() {
           </div>
           <div>
             <div className="text-xs font-bold text-white tracking-tight flex items-center gap-2">
-              Alex Chen
+              Ramandeep Singh (Raman Singh)
               <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center gap-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" /> Available Q4
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" /> Available for Opportunities
               </span>
             </div>
             <div className="text-[11px] font-mono text-zinc-500 mt-0.5">
-              Designed with custom pitch-dark theme & AI-powered architecture
+              Full-Stack & AI Engineer • ramansingh.me
             </div>
           </div>
         </div>
@@ -33,7 +33,7 @@ export function Footer() {
         {/* Right copyright & Back to top button */}
         <div className="flex items-center gap-6">
           <span className="text-xs text-zinc-400 font-mono">
-            © {new Date().getFullYear()} Alex Chen. All rights reserved.
+            © {new Date().getFullYear()} Ramandeep Singh. All rights reserved.
           </span>
           <button
             onClick={scrollToTop}

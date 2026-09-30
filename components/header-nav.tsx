@@ -36,7 +36,7 @@ export function HeaderNav({ onPlanProjectClick }: HeaderNavProps) {
             </div>
             <div className="flex flex-col">
               <span className="text-sm font-bold text-white tracking-tight flex items-center gap-1.5">
-                Alex Chen
+                Raman Singh
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               </span>
               <span className="text-[11px] font-mono text-zinc-400">Full-Stack & AI Engineer</span>

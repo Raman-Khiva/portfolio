@@ -32,7 +32,7 @@ import {
 import { ProjectPlanData } from "./project-plan-modal"
 
 interface HeroSectionProps {
-  onSelectPrompt: (plan: ProjectPlanData) => void
+  onSelectPrompt?: (plan: ProjectPlanData) => void
 }
 
 export const PRESET_PLANS: Record<string, ProjectPlanData> = {
@@ -178,13 +178,13 @@ export const PRESET_PLANS: Record<string, ProjectPlanData> = {
   },
 }
 
-export function HeroSection({ onSelectPrompt }: HeroSectionProps) {
+export function HeroSection({ onSelectPrompt }: HeroSectionProps = {}) {
   return (
     <section id="overview" className="relative pt-32 pb-16 px-4 flex flex-col items-center justify-center">
       <div className="max-w-4xl w-full mx-auto flex flex-col items-center text-center gap-8">
         
         {/* Developer Profile Badge */}
-        <div className="relative group cursor-pointer" onClick={() => onSelectPrompt(PRESET_PLANS["oasian"])}>
+        <div className="relative group">
           <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-44 md:h-44 rounded-full bg-[#121215] border-2 border-[#262632] p-1.5 shadow-2xl shadow-black badge-glow transition-all duration-300 group-hover:border-amber-400 group-hover:scale-105 overflow-hidden">
             <Image
               src="/portfolio-pic.png"
@@ -315,7 +315,10 @@ export function HeroSection({ onSelectPrompt }: HeroSectionProps) {
           
           {/* Card 1: Full-Stack & MERN */}
           <div
-            onClick={() => onSelectPrompt(PRESET_PLANS["oasian"])}
+            onClick={() => {
+              const el = document.getElementById("tech-stack")
+              if (el) el.scrollIntoView({ behavior: "smooth" })
+            }}
             className="group p-5 rounded-2xl bg-[#131316] hover:bg-[#18181d] border border-[#222228] hover:border-amber-500/50 transition-all duration-300 cursor-pointer text-left flex flex-col gap-3 card-glow justify-between"
           >
             <div>
@@ -363,7 +366,10 @@ export function HeroSection({ onSelectPrompt }: HeroSectionProps) {
 
           {/* Card 2: Backend, DBs & Cloud */}
           <div
-            onClick={() => onSelectPrompt(PRESET_PLANS["velor"])}
+            onClick={() => {
+              const el = document.getElementById("tech-stack")
+              if (el) el.scrollIntoView({ behavior: "smooth" })
+            }}
             className="group p-5 rounded-2xl bg-[#131316] hover:bg-[#18181d] border border-[#222228] hover:border-cyan-500/50 transition-all duration-300 cursor-pointer text-left flex flex-col gap-3 card-glow justify-between"
           >
             <div>
@@ -411,7 +417,10 @@ export function HeroSection({ onSelectPrompt }: HeroSectionProps) {
 
           {/* Card 3: C++, OOPs & CP */}
           <div
-            onClick={() => onSelectPrompt(PRESET_PLANS["weavit"])}
+            onClick={() => {
+              const el = document.getElementById("tech-stack")
+              if (el) el.scrollIntoView({ behavior: "smooth" })
+            }}
             className="group p-5 rounded-2xl bg-[#131316] hover:bg-[#18181d] border border-[#222228] hover:border-purple-500/50 transition-all duration-300 cursor-pointer text-left flex flex-col gap-3 card-glow justify-between"
           >
             <div>
@@ -459,7 +468,10 @@ export function HeroSection({ onSelectPrompt }: HeroSectionProps) {
 
           {/* Card 4: AI ML & RAG Systems */}
           <div
-            onClick={() => onSelectPrompt(PRESET_PLANS["rag-ml"])}
+            onClick={() => {
+              const el = document.getElementById("tech-stack")
+              if (el) el.scrollIntoView({ behavior: "smooth" })
+            }}
             className="group p-5 rounded-2xl bg-[#131316] hover:bg-[#18181d] border border-[#222228] hover:border-emerald-500/50 transition-all duration-300 cursor-pointer text-left flex flex-col gap-3 card-glow justify-between"
           >
             <div>

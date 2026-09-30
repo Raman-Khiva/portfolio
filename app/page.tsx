@@ -39,14 +39,14 @@ export default function Page() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-amber-500/5 blur-[120px] rounded-full pointer-events-none -z-10" />
 
       {/* Header Navigation */}
-      <HeaderNav onPlanProjectClick={() => handleOpenPlan(PRESET_PLANS["ai-agent"])} />
+      <HeaderNav />
 
       {/* Main Content */}
       <main className="flex flex-col gap-8 pb-16">
-        {/* Hero Section matching exact screenshot layout */}
-        <HeroSection onSelectPrompt={handleOpenPlan} />
+        {/* Hero Section */}
+        <HeroSection />
 
-        {/* Featured Projects Showcase */}
+        {/* Featured Projects Showcase — Only section that opens project details modal */}
         <ProjectsSection onInspectPlan={handleOpenPlan} />
 
         {/* Role Competencies & Capabilities */}

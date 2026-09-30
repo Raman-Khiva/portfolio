@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from "react"
-import { Mail, Copy, Check, Calendar, Send, Sparkles, MessageSquare, Globe, Trophy } from "lucide-react"
+import { Mail, Copy, Check, Calendar, Send, Sparkles, MessageSquare, Globe, Trophy, ArrowUpRight } from "lucide-react"
 import { GithubIcon, LinkedinIcon, LeetCodeIcon } from "@/components/icons"
 
 interface ContactSectionProps {
@@ -29,14 +29,23 @@ export function ContactSection({ initialTopic = "" }: ContactSectionProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     setSubmitted(true)
+
+    const subject = encodeURIComponent(`[Portfolio Inquiry] ${formData.scope} - ${formData.name}`)
+    const body = encodeURIComponent(
+      `Hello Raman,\n\nName: ${formData.name}\nEmail: ${formData.email}\nProject Scope: ${formData.scope}\n\nMessage Details:\n${formData.message}\n\nBest regards,\n${formData.name}`
+    )
+
+    // Open mail app with pre-filled content
+    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`
+
     setTimeout(() => {
       setSubmitted(false)
       setFormData({ name: "", email: "", scope: "Full-Stack Web App (MERN / Next.js)", message: "" })
-    }, 3000)
+    }, 4000)
   }
 
   return (
-    <section id="contact" className="py-20 px-4 max-w-5xl mx-auto w-full">
+    <section id="contact" className="py-20 px-4 max-w-6xl mx-auto w-full">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         
         {/* Left Column: Direct Info & Social Cards */}
@@ -54,14 +63,14 @@ export function ContactSection({ initialTopic = "" }: ContactSectionProps) {
           </div>
 
           {/* Email Quick Action Card */}
-          <div className="p-5 rounded-2xl bg-[#121215] border border-[#222228] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 card-glow">
-            <div className="flex items-center gap-3">
+          <div className="p-5 rounded-2xl bg-[#121215] border border-[#222228] flex flex-col xl:flex-row items-start xl:items-center justify-between gap-4 card-glow">
+            <div className="flex items-center gap-3 min-w-0">
               <div className="w-10 h-10 rounded-xl bg-[#1a1a22] border border-[#2a2a38] flex items-center justify-center text-amber-400 shrink-0">
                 <Mail className="w-5 h-5" />
               </div>
-              <div>
+              <div className="min-w-0">
                 <div className="text-xs text-zinc-400 font-mono">Direct Email</div>
-                <div className="text-xs sm:text-sm font-bold text-white font-mono break-all">{email}</div>
+                <div className="text-xs sm:text-sm font-bold text-white font-mono whitespace-nowrap">{email}</div>
               </div>
             </div>
 
@@ -95,62 +104,80 @@ export function ContactSection({ initialTopic = "" }: ContactSectionProps) {
             </div>
           </div>
 
-          {/* Portfolio Domain Card */}
-          <div className="p-5 rounded-2xl bg-[#121215] border border-[#222228] flex items-center justify-between gap-4 card-glow">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#1a1a22] border border-[#2a2a38] flex items-center justify-center text-cyan-400">
-                <Globe className="w-5 h-5" />
-              </div>
-              <div>
-                <div className="text-xs text-zinc-400 font-mono">Official Portfolio</div>
-                <div className="text-sm font-bold text-white font-mono">ramansingh.me</div>
-              </div>
-            </div>
-            <a
-              href="https://ramansingh.me"
-              target="_blank"
-              rel="noreferrer"
-              className="px-3.5 py-2 rounded-xl bg-white hover:bg-zinc-200 text-black text-xs font-semibold transition shadow"
-            >
-              Visit
-            </a>
-          </div>
-
-          {/* Social Profiles */}
+          {/* Profiles & Links: GitHub, LinkedIn, LeetCode (Vertical Stack) */}
           <div className="pt-2">
-            <div className="text-xs text-zinc-500 font-mono mb-3">Connect & Follow Profiles</div>
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="text-xs text-zinc-400 font-mono mb-3 uppercase tracking-wider font-semibold">
+              Profiles & Repositories
+            </div>
+            
+            <div className="flex flex-col gap-3 w-full">
+              {/* 1. GitHub */}
               <a
                 href="https://github.com/Raman-Khiva"
                 target="_blank"
                 rel="noreferrer"
-                className="px-3.5 py-2 rounded-xl bg-[#121215] hover:bg-[#1a1a22] border border-[#222228] text-zinc-300 hover:text-white transition flex items-center gap-2 text-xs font-mono"
-                title="GitHub (Raman Khiva)"
+                className="w-full p-3.5 rounded-2xl bg-[#121215] hover:bg-[#18181e] border border-[#222228] hover:border-zinc-500 text-zinc-200 hover:text-white transition-all duration-200 flex items-center justify-between gap-3 group"
+                title="GitHub Profile"
               >
-                <GithubIcon className="w-4 h-4" />
-                <span>Raman Khiva</span>
+                <div className="flex items-center gap-3 overflow-hidden">
+                  <div className="w-10 h-10 rounded-xl bg-[#1a1a22] border border-[#2a2a38] flex items-center justify-center text-white shrink-0 group-hover:scale-105 transition-transform">
+                    <GithubIcon className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="overflow-hidden">
+                    <div className="text-xs text-zinc-400 font-mono">GitHub Profile</div>
+                    <div className="text-sm font-bold text-white tracking-tight truncate">Raman-Khiva</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 text-xs font-mono text-zinc-400 group-hover:text-white transition-colors shrink-0">
+                  <span className="hidden sm:inline">View Repositories</span>
+                  <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover:text-white transition-colors" />
+                </div>
               </a>
 
-              <a
-                href="https://leetcode.com/u/Raman_Khiva/"
-                target="_blank"
-                rel="noreferrer"
-                className="px-3.5 py-2 rounded-xl bg-[#121215] hover:bg-[#1a1a22] border border-[#222228] text-zinc-300 hover:text-amber-400 transition flex items-center gap-2 text-xs font-mono"
-                title="LeetCode (1912 Rating)"
-              >
-                <LeetCodeIcon className="w-4 h-4 text-amber-500" />
-                <span>Raman_Khiva (1912 CP)</span>
-              </a>
-
+              {/* 2. LinkedIn */}
               <a
                 href="https://www.linkedin.com/in/ramandeep-singh-503077200/"
                 target="_blank"
                 rel="noreferrer"
-                className="px-3.5 py-2 rounded-xl bg-[#121215] hover:bg-[#1a1a22] border border-[#222228] text-zinc-300 hover:text-cyan-400 transition flex items-center gap-2 text-xs font-mono"
-                title="LinkedIn"
+                className="w-full p-3.5 rounded-2xl bg-[#121215] hover:bg-[#18181e] border border-[#222228] hover:border-cyan-500/50 text-zinc-200 hover:text-white transition-all duration-200 flex items-center justify-between gap-3 group"
+                title="LinkedIn Profile"
               >
-                <LinkedinIcon className="w-4 h-4 text-cyan-400" />
-                <span>LinkedIn</span>
+                <div className="flex items-center gap-3 overflow-hidden">
+                  <div className="w-10 h-10 rounded-xl bg-[#1a1a22] border border-[#2a2a38] flex items-center justify-center text-cyan-400 shrink-0 group-hover:scale-105 transition-transform">
+                    <LinkedinIcon className="w-5 h-5 text-cyan-400" />
+                  </div>
+                  <div className="overflow-hidden">
+                    <div className="text-xs text-zinc-400 font-mono">LinkedIn Network</div>
+                    <div className="text-sm font-bold text-white tracking-tight truncate">Ramandeep Singh</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 text-xs font-mono text-zinc-400 group-hover:text-cyan-400 transition-colors shrink-0">
+                  <span className="hidden sm:inline">Connect</span>
+                  <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover:text-cyan-400 transition-colors" />
+                </div>
+              </a>
+
+              {/* 3. LeetCode */}
+              <a
+                href="https://leetcode.com/u/Raman_Khiva/"
+                target="_blank"
+                rel="noreferrer"
+                className="w-full p-3.5 rounded-2xl bg-[#121215] hover:bg-[#18181e] border border-[#222228] hover:border-amber-500/50 text-zinc-200 hover:text-white transition-all duration-200 flex items-center justify-between gap-3 group"
+                title="LeetCode Profile (1912 CP Rating)"
+              >
+                <div className="flex items-center gap-3 overflow-hidden">
+                  <div className="w-10 h-10 rounded-xl bg-[#1a1a22] border border-[#2a2a38] flex items-center justify-center text-amber-400 shrink-0 group-hover:scale-105 transition-transform">
+                    <LeetCodeIcon className="w-5 h-5 text-amber-500" />
+                  </div>
+                  <div className="overflow-hidden">
+                    <div className="text-xs text-zinc-400 font-mono">LeetCode (1912 Rating)</div>
+                    <div className="text-sm font-bold text-white tracking-tight truncate">Raman_Khiva</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 text-xs font-mono text-zinc-400 group-hover:text-amber-400 transition-colors shrink-0">
+                  <span className="hidden sm:inline">View Submissions</span>
+                  <ArrowUpRight className="w-4 h-4 text-zinc-500 group-hover:text-amber-400 transition-colors" />
+                </div>
               </a>
             </div>
           </div>

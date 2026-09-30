@@ -16,6 +16,14 @@ import {
   WebSocketsIcon,
   LeetCodeIcon,
   CppIcon,
+  FastApiIcon,
+  MongoIcon,
+  PrismaIcon,
+  ReduxIcon,
+  ExpressIcon,
+  OpenAiIcon,
+  LangChainIcon,
+  LinuxIcon,
 } from "@/components/icons"
 import { ProjectPlanData } from "./project-plan-modal"
 import { PRESET_PLANS } from "./hero-section"
@@ -38,45 +46,45 @@ interface ProjectItem {
 
 const PROJECTS_LIST: ProjectItem[] = [
   {
-    id: "project-oasian",
-    title: "Oasian — Startup Full-Stack Platform",
-    description: "High-scale full-stack platform built for a startup. Engineered using MERN stack, Next.js 16, Redux Toolkit, Redis caching, and PostgreSQL schema indexing.",
+    id: "oasian",
+    title: "Oasian — Full-Stack SaaS Application Platform",
+    description: "Production web application engineered with MERN stack, Next.js 16 App Router, TypeScript, Redux Toolkit, PostgreSQL & Redis caching. Features high-speed server response SLA, JWT auth, and animated responsive dashboards.",
     category: "Full-Stack",
-    tags: ["MERN", "Next.js 16", "TypeScript", "Redux", "Redis", "Postgres"],
-    metrics: "2+ Years • Sub-40ms Response Time",
-    githubUrl: "https://github.com/Raman-Khiva",
-    demoUrl: "https://oasian.in",
+    tags: ["Next.js 16", "React 19", "Node.js", "Express", "TypeScript", "PostgreSQL", "Prisma", "Redis", "Redux", "Tailwind CSS"],
+    metrics: "Sub-40ms Response Time",
+    githubUrl: "https://github.com/Raman-Khiva/oasian",
+    demoUrl: "https://oasian.me",
     presetKey: "oasian",
   },
   {
-    id: "project-velor",
-    title: "Velor — Developer Project & Workflow Engine",
-    description: "Automated developer project management platform evolution. Built with Next.js 16, Prisma ORM, GitHub commit webhooks, and live project status cards.",
-    category: "Full-Stack",
-    tags: ["Next.js 16", "TypeScript", "Prisma", "Postgres", "Docker"],
-    metrics: "Automated Sync • 99.95% Target SLA",
-    githubUrl: "https://github.com/Raman-Khiva",
-    demoUrl: "https://velor-web-rho.vercel.app/",
+    id: "velor",
+    title: "Velor — Cloud Infrastructure & Execution Engine",
+    description: "High-throughput cloud management console and project engine powered by Express microservices, Prisma ORM, Redis rate limiters, Docker containerization, and automated CI/CD pipeline automation.",
+    category: "Cloud Systems",
+    tags: ["Express.js", "Node.js", "Docker", "PostgreSQL", "Prisma", "Redis", "TypeScript", "Tailwind CSS"],
+    metrics: "99.9% Uptime SLA",
+    githubUrl: "https://github.com/Raman-Khiva/velor-cloud",
+    demoUrl: "https://velor.me",
     presetKey: "velor",
   },
   {
-    id: "project-weavit",
-    title: "Weavit — Interactive Workspace Canvas",
-    description: "Interactive canvas workflow application built with React, Redux Toolkit, WebSockets state synchronization, and custom UI primitives.",
+    id: "weavit",
+    title: "Weavit — Real-Time Interactive Canvas & Workspace",
+    description: "Collaborative interactive web workspace built with React 19, HTML5 Canvas, WebSockets pub/sub, custom state synchronization, and sub-16ms fluid canvas frame rates.",
     category: "Interactive App",
-    tags: ["React", "Redux", "WebSockets", "Node.js", "Redis"],
-    metrics: "60 FPS Canvas • Sub-15ms Latency",
-    githubUrl: "https://github.com/Raman-Khiva",
-    demoUrl: "https://weavit.tech",
+    tags: ["React 19", "TypeScript", "WebSockets", "HTML5 Canvas", "Redux", "Tailwind CSS"],
+    metrics: "60 FPS Fluid Canvas",
+    githubUrl: "https://github.com/Raman-Khiva/weavit",
+    demoUrl: "https://weavit.me",
     presetKey: "weavit",
   },
   {
-    id: "project-rag-ml",
-    title: "AI ML RAG Knowledge Engine",
-    description: "Retrieval-Augmented Generation pipeline built with Python, FastAPI async routes, vector context embeddings, and streaming LLM responses.",
+    id: "rag-ml",
+    title: "Vector ML & Autonomous RAG Intelligence Engine",
+    description: "Production AI microservice platform using Python FastAPI, Vector Embeddings (ChromaDB), LangChain LLM context pipelines, and Pydantic async validation for enterprise data retrieval.",
     category: "AI/ML",
-    tags: ["Python", "FastAPI", "ML RAG", "Redis", "Docker"],
-    metrics: "Semantic Context • <110ms Stream",
+    tags: ["Python", "FastAPI", "RAG Engine", "Vector DB", "OpenAI API", "LangChain", "Docker", "Linux"],
+    metrics: "< 500ms Vector Search",
     githubUrl: "https://github.com/Raman-Khiva",
     demoUrl: "https://ramansingh.me",
     presetKey: "rag-ml",
@@ -91,36 +99,57 @@ function renderTechBadge(tag: string, idx: number) {
   if (tagLower.includes("next")) {
     IconComp = NextIcon
     iconColor = "text-white"
-  } else if (tagLower.includes("react") || tagLower.includes("mern")) {
+  } else if (tagLower.includes("react")) {
     IconComp = ReactIcon
-    iconColor = "text-amber-400"
+    iconColor = "text-cyan-400"
+  } else if (tagLower.includes("fastapi")) {
+    IconComp = FastApiIcon
+    iconColor = "text-teal-400"
   } else if (tagLower.includes("python")) {
     IconComp = PythonIcon
     iconColor = "text-amber-400"
   } else if (tagLower.includes("node")) {
     IconComp = NodeIcon
     iconColor = "text-emerald-400"
+  } else if (tagLower.includes("express")) {
+    IconComp = ExpressIcon
+    iconColor = "text-zinc-300"
   } else if (tagLower.includes("docker")) {
     IconComp = DockerIcon
     iconColor = "text-cyan-400"
   } else if (tagLower.includes("postgres")) {
     IconComp = PostgresIcon
-    iconColor = "text-cyan-400"
+    iconColor = "text-blue-400"
+  } else if (tagLower.includes("mongo")) {
+    IconComp = MongoIcon
+    iconColor = "text-emerald-500"
+  } else if (tagLower.includes("prisma")) {
+    IconComp = PrismaIcon
+    iconColor = "text-indigo-400"
   } else if (tagLower.includes("typescript")) {
     IconComp = TypeScriptIcon
-    iconColor = "text-amber-400"
+    iconColor = "text-blue-400"
   } else if (tagLower.includes("tailwind")) {
     IconComp = TailwindIcon
     iconColor = "text-cyan-400"
   } else if (tagLower.includes("redis")) {
     IconComp = RedisIcon
     iconColor = "text-red-400"
+  } else if (tagLower.includes("redux")) {
+    IconComp = ReduxIcon
+    iconColor = "text-purple-400"
   } else if (tagLower.includes("websocket")) {
     IconComp = WebSocketsIcon
     iconColor = "text-emerald-400"
-  } else if (tagLower.includes("fastapi") || tagLower.includes("rag") || tagLower.includes("ml")) {
-    IconComp = Cpu
-    iconColor = "text-emerald-400"
+  } else if (tagLower.includes("openai")) {
+    IconComp = OpenAiIcon
+    iconColor = "text-purple-400"
+  } else if (tagLower.includes("langchain")) {
+    IconComp = LangChainIcon
+    iconColor = "text-amber-400"
+  } else if (tagLower.includes("linux")) {
+    IconComp = LinuxIcon
+    iconColor = "text-amber-400"
   } else if (tagLower.includes("c++") || tagLower.includes("cpp")) {
     IconComp = CppIcon
     iconColor = "text-cyan-400"
@@ -186,7 +215,12 @@ export function ProjectsSection({ onInspectPlan }: ProjectsSectionProps) {
         {filteredProjects.map((project) => (
           <div
             key={project.id}
-            className="group p-6 rounded-2xl bg-[#121215] border border-[#222228] hover:border-zinc-600 transition-all duration-300 flex flex-col justify-between card-glow relative"
+            onClick={() => {
+              if (project.presetKey && PRESET_PLANS[project.presetKey]) {
+                onInspectPlan(PRESET_PLANS[project.presetKey])
+              }
+            }}
+            className="group p-6 rounded-2xl bg-[#121215] border border-[#222228] hover:border-amber-500/50 transition-all duration-300 flex flex-col justify-between card-glow relative cursor-pointer"
           >
             <div>
               {/* Category & Metrics bar */}
@@ -217,10 +251,14 @@ export function ProjectsSection({ onInspectPlan }: ProjectsSectionProps) {
             <div className="pt-4 border-t border-[#1c1c24] flex items-center justify-between">
               {project.presetKey && PRESET_PLANS[project.presetKey] && (
                 <button
-                  onClick={() => onInspectPlan(PRESET_PLANS[project.presetKey!])}
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    onInspectPlan(PRESET_PLANS[project.presetKey!])
+                  }}
                   className="text-xs text-amber-400 hover:text-amber-300 font-medium flex items-center gap-1 transition"
                 >
-                  <Sparkles className="w-3.5 h-3.5" /> View Architecture Plan
+                  <Sparkles className="w-3.5 h-3.5" /> View Architecture Plan & Details
                 </button>
               )}
 
@@ -230,6 +268,7 @@ export function ProjectsSection({ onInspectPlan }: ProjectsSectionProps) {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noreferrer"
+                    onClick={(e) => e.stopPropagation()}
                     className="p-2 rounded-xl bg-[#1a1a22] border border-[#2a2a35] text-zinc-400 hover:text-white transition"
                     title="GitHub Repository"
                   >
@@ -241,6 +280,7 @@ export function ProjectsSection({ onInspectPlan }: ProjectsSectionProps) {
                     href={project.demoUrl}
                     target="_blank"
                     rel="noreferrer"
+                    onClick={(e) => e.stopPropagation()}
                     className="px-3 py-1.5 rounded-xl bg-[#1c1c24] hover:bg-[#262632] border border-[#2a2a38] text-xs font-semibold text-white flex items-center gap-1.5 transition"
                   >
                     Live Demo <ArrowUpRight className="w-3.5 h-3.5 text-amber-400" />

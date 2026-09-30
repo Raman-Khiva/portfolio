@@ -36,9 +36,8 @@ interface ProjectItem {
   id: string
   title: string
   description: string
-  category: "AI/ML" | "Full-Stack" | "Interactive App" | "Cloud Systems"
+  category: "Full-Stack" | "SaaS" | "AI/ML"
   tags: string[]
-  metrics: string
   demoUrl?: string
   githubUrl?: string
   presetKey?: string
@@ -47,11 +46,10 @@ interface ProjectItem {
 const PROJECTS_LIST: ProjectItem[] = [
   {
     id: "oasian",
-    title: "Oasian — Full-Stack SaaS Application Platform",
+    title: "Oasian — Full-Stack Application Platform",
     description: "Production web application engineered with MERN stack, Next.js 16 App Router, TypeScript, Redux Toolkit, PostgreSQL & Redis caching. Features high-speed server response SLA, JWT auth, and animated responsive dashboards.",
     category: "Full-Stack",
     tags: ["Next.js 16", "React 19", "Node.js", "Express", "TypeScript", "PostgreSQL", "Prisma", "Redis", "Redux", "Tailwind CSS"],
-    metrics: "Sub-40ms Response Time",
     githubUrl: "https://github.com/Raman-Khiva/oasian",
     demoUrl: "https://oasian.me",
     presetKey: "oasian",
@@ -60,9 +58,8 @@ const PROJECTS_LIST: ProjectItem[] = [
     id: "velor",
     title: "Velor — Cloud Infrastructure & Execution Engine",
     description: "High-throughput cloud management console and project engine powered by Express microservices, Prisma ORM, Redis rate limiters, Docker containerization, and automated CI/CD pipeline automation.",
-    category: "Cloud Systems",
+    category: "SaaS",
     tags: ["Express.js", "Node.js", "Docker", "PostgreSQL", "Prisma", "Redis", "TypeScript", "Tailwind CSS"],
-    metrics: "99.9% Uptime SLA",
     githubUrl: "https://github.com/Raman-Khiva/velor-cloud",
     demoUrl: "https://velor.me",
     presetKey: "velor",
@@ -71,9 +68,8 @@ const PROJECTS_LIST: ProjectItem[] = [
     id: "weavit",
     title: "Weavit — Real-Time Interactive Canvas & Workspace",
     description: "Collaborative interactive web workspace built with React 19, HTML5 Canvas, WebSockets pub/sub, custom state synchronization, and sub-16ms fluid canvas frame rates.",
-    category: "Interactive App",
+    category: "SaaS",
     tags: ["React 19", "TypeScript", "WebSockets", "HTML5 Canvas", "Redux", "Tailwind CSS"],
-    metrics: "60 FPS Fluid Canvas",
     githubUrl: "https://github.com/Raman-Khiva/weavit",
     demoUrl: "https://weavit.me",
     presetKey: "weavit",
@@ -84,7 +80,6 @@ const PROJECTS_LIST: ProjectItem[] = [
     description: "Production AI microservice platform using Python FastAPI, Vector Embeddings (ChromaDB), LangChain LLM context pipelines, and Pydantic async validation for enterprise data retrieval.",
     category: "AI/ML",
     tags: ["Python", "FastAPI", "RAG Engine", "Vector DB", "OpenAI API", "LangChain", "Docker", "Linux"],
-    metrics: "< 500ms Vector Search",
     githubUrl: "https://github.com/Raman-Khiva",
     demoUrl: "https://ramansingh.me",
     presetKey: "rag-ml",
@@ -194,7 +189,7 @@ export function ProjectsSection({ onInspectPlan }: ProjectsSectionProps) {
 
         {/* Filter Pills */}
         <div className="flex flex-wrap gap-2">
-          {["All", "Full-Stack", "Interactive App", "AI/ML"].map((cat) => (
+          {["All", "Full-Stack", "SaaS", "AI/ML"].map((cat) => (
             <button
               key={cat}
               onClick={() => setFilter(cat)}
@@ -223,13 +218,10 @@ export function ProjectsSection({ onInspectPlan }: ProjectsSectionProps) {
             className="group p-6 rounded-2xl bg-[#121215] border border-[#222228] hover:border-amber-500/50 transition-all duration-300 flex flex-col justify-between card-glow relative cursor-pointer"
           >
             <div>
-              {/* Category & Metrics bar */}
+              {/* Category tag */}
               <div className="flex items-center justify-between gap-2 mb-3">
                 <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-md bg-[#1a1a22] border border-[#2a2a38] text-amber-400">
                   {project.category}
-                </span>
-                <span className="text-[11px] font-mono text-zinc-400">
-                  {project.metrics}
                 </span>
               </div>
 
